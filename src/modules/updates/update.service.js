@@ -22,7 +22,22 @@ export class UpdateService {
   static async getUserUpdates(params) {
     return AuthorizedUpdatesService.getUserUpdates(params);
   }
+
+  /**
+   * Update an update by ID with ownership verification.
+   */
+  static async updateUpdateById(params) {
+    return AuthorizedUpdatesService.updateUpdateById(params);
+  }
+
+  /**
+   * Delete an update by ID with ownership verification.
+   */
+  static async deleteUpdateById(params) {
+    return AuthorizedUpdatesService.deleteUpdateById(params);
+  }
 }
 
 export { PublicUpdatesService, AuthorizedUpdatesService };
+
 

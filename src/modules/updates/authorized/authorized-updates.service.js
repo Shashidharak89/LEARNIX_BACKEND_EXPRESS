@@ -105,4 +105,175 @@ export class AuthorizedUpdatesService {
       },
     };
   }
+
+  /**
+   * Update an update document by ID with ownership verification.
+   * Only the creator or an admin/superadmin can modify the update.
+   * @param {object} params
+   * @param {string} params.id
+   * @param {string} params.userId
+   * @param {string} params.userRole
+   * @param {object} params.data
+   */
+  static async updateUpdateById({ id, userId, userRole, data = {} }) {
+    if (!id || !mongoose.Types.ObjectId.isValid(id)) {
+      throw new ApiError(400, "Invalid update ID");
+    }
+
+    if (!userId) {
+      throw new ApiError(401, "Authentication required to edit update");
+    }
+
+    const update = await Update.findById(id);
+
+    if (!update) {
+      throw new ApiError(404, "Update not found");
+    }
+
+    // Ownership check: user must be the author or an admin
+    const isOwner = update.userId.toString() === userId.toString();
+    const isAdmin = userRole === "admin" || userRole === "superadmin";
+
+    if (!isOwner && !isAdmin) {
+      throw new ApiError(403, "Forbidden: You are not authorized to edit this update");
+    }
+
+    const { title, content, links, files, visibility } = data;
+
+    // Validate visibility if provided
+    if (visibility !== undefined) {
+      const allowedVisibilities = ["public", "private", "unlisted"];
+      if (!allowedVisibilities.includes(visibility)) {
+        throw new ApiError(
+          400,
+          `Invalid visibility. Allowed values: ${allowedVisibilities.join(", ")}`
+        );
+      }
+      update.visibility = visibility;
+    }
+
+    if (title !== undefined) {
+      const trimmedTitle = typeof title === "string" ? title.trim() : "";
+      if (!trimmedTitle) {
+        throw new ApiError(400, "Title cannot be empty");
+      }
+      update.title = trimmedTitle;
+    }
+
+    if (content !== undefined) {
+      const trimmedContent = typeof content === "string" ? content.trim() : "";
+      if (!trimmedContent) {
+        throw new ApiError(400, "Content cannot be empty");
+      }
+      update.content = trimmedContent;
+    }
+
+    if (links !== undefined) {
+      update.links = Array.isArray(links) ? links : [links];
+    }
+
+    if (files !== undefined) {
+      update.files = Array.isArray(files) ? files : [files];
+    }
+
+    await update.save();
+
+    // Invalidate cached latest titles if visibility or title changed
+    try {
+      const { CacheService } = await import("../../../common/services/cache.service.js");
+      await CacheService.del("updates:latest_3_titles");
+    } catch (e) {
+      console.warn("[AuthorizedUpdatesService] Cache invalidation warning:", e.message);
+    }
+
+    // Fetch author info to return enriched response
+    const authorDoc = await User.findById(update.userId, {
+      name: 1,
+      usn: 1,
+      profileimg: 1,
+    }).lean();
+
+    return {
+      _id: update._id,
+      title: update.title,
+      content: update.content,
+      links: update.links || [],
+      files: update.files || [],
+      userId: update.userId,
+      visibility: update.visibility || "public",
+      createdAt: update.createdAt,
+      updatedAt: update.updatedAt,
+      author: {
+        name: authorDoc?.name || null,
+        usn: authorDoc?.usn || null,
+        profileimg: authorDoc?.profileimg || null,
+      },
+    };
+  }
+
+  /**
+   * Delete an update document by ID with ownership verification and file cleanup.
+   * Only the creator or an admin/superadmin can delete the update.
+   * @param {object} params
+   * @param {string} params.id
+   * @param {string} params.userId
+   * @param {string} params.userRole
+   */
+  static async deleteUpdateById({ id, userId, userRole }) {
+    if (!id || !mongoose.Types.ObjectId.isValid(id)) {
+      throw new ApiError(400, "Invalid update ID");
+    }
+
+    if (!userId) {
+      throw new ApiError(401, "Authentication required to delete update");
+    }
+
+    const update = await Update.findById(id);
+
+    if (!update) {
+      throw new ApiError(404, "Update not found");
+    }
+
+    // Ownership check: user must be the author or an admin
+    const isOwner = update.userId.toString() === userId.toString();
+    const isAdmin = userRole === "admin" || userRole === "superadmin";
+
+    if (!isOwner && !isAdmin) {
+      throw new ApiError(403, "Forbidden: You are not authorized to delete this update");
+    }
+
+    // Best-effort cleanup of associated Cloudinary files
+    if (update.files && update.files.length > 0) {
+      try {
+        const cloudinary = (await import("../../../config/cloudinary.js")).default;
+        await Promise.allSettled(
+          update.files
+            .filter((f) => f && f.publicId)
+            .map((f) =>
+              cloudinary.uploader.destroy(f.publicId, {
+                resource_type: f.resourceType || "raw",
+              })
+            )
+        );
+      } catch (err) {
+        console.warn("[AuthorizedUpdatesService] Cloudinary cleanup warning:", err.message);
+      }
+    }
+
+    await Update.findByIdAndDelete(id);
+
+    // Invalidate cached latest titles
+    try {
+      const { CacheService } = await import("../../../common/services/cache.service.js");
+      await CacheService.del("updates:latest_3_titles");
+    } catch (e) {
+      console.warn("[AuthorizedUpdatesService] Cache invalidation warning:", e.message);
+    }
+
+    return {
+      deleted: true,
+      id,
+      title: update.title,
+    };
+  }
 }
