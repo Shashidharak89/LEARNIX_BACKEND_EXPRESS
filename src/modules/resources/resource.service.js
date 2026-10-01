@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-import Topic from "../../models/Topic.js";
-import Subject from "../../models/Subject.js";
-import User from "../../models/User.js";
+import Topic from "../../models/resources/Topic.js";
+import Subject from "../../models/resources/Subject.js";
+import User from "../../models/user/User.js";
 import { ApiError } from "../../common/utils/apiError.js";
 
 function escapeRegex(text = "") {

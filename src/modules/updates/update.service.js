@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import Update from "../../models/Update.js";
-import User from "../../models/User.js";
+import Update from "../../models/updates/Update.js";
+import User from "../../models/user/User.js";
 import { ApiError } from "../../common/utils/apiError.js";
 
 function escapeRegex(text = "") {
