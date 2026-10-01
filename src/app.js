@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import updateRoutes from "./modules/updates/update.routes.js";
 import resourceRoutes from "./modules/resources/resource.routes.js";
+import userRoutes from "./modules/user/user.routes.js";
 import { errorHandler } from "./common/middleware/errorHandler.js";
 import { ApiError } from "./common/utils/apiError.js";
 
@@ -31,6 +32,11 @@ app.use("/api/update", updateRoutes);
 
 // Resources routes: /api/resources/getresources
 app.use("/api/resources", resourceRoutes);
+
+// User & Auth routes: /api/user/me, /api/auth/me, /api/me
+app.use("/api/user", userRoutes);
+app.use("/api/auth", userRoutes);
+app.use("/api", userRoutes);
 
 // 404 Route Handler
 app.use((req, res, next) => {

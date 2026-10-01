@@ -11,5 +11,7 @@ export const env = {
   CLOUDINARY_KEY: process.env.CLOUDINARY_KEY || process.env.CLOUDINARY_API_KEY || "",
   CLOUDINARY_SECRET: process.env.CLOUDINARY_SECRET || process.env.CLOUDINARY_API_SECRET || "",
   REDIS_URL: process.env.REDIS_URL || "",
+  SECRET_KEY: process.env.SECRET_KEY || process.env.JWT_SECRET || "",
+  JWT_SECRET: process.env.SECRET_KEY || process.env.JWT_SECRET || "",
   CLIENT_URL: process.env.CLIENT_URL || "*",
 };
