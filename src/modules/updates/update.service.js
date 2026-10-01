@@ -7,6 +7,15 @@ function escapeRegex(text = "") {
   return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+function cleanKeyword(text = "") {
+  if (!text || typeof text !== "string") return "";
+  let cleaned = text.trim();
+  // Strip enclosing quotes like "" or '' or \"\"
+  cleaned = cleaned.replace(/^["']+|["']+$/g, "").trim();
+  if (cleaned === "null" || cleaned === "undefined") return "";
+  return cleaned;
+}
+
 export class UpdateService {
   /**
    * Fetch public updates with pagination, sorting (latest first), and optional keyword search.
@@ -24,7 +33,7 @@ export class UpdateService {
 
     let filter = visibilityCondition;
 
-    const trimmedKeyword = (keyword || "").trim();
+    const trimmedKeyword = cleanKeyword(keyword);
     if (trimmedKeyword) {
       const regex = new RegExp(escapeRegex(trimmedKeyword), "i");
 

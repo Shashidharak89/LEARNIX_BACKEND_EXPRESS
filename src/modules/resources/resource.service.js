@@ -8,6 +8,15 @@ function escapeRegex(text = "") {
   return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+function cleanKeyword(text = "") {
+  if (!text || typeof text !== "string") return "";
+  let cleaned = text.trim();
+  // Strip enclosing quotes like "" or '' or \"\"
+  cleaned = cleaned.replace(/^["']+|["']+$/g, "").trim();
+  if (cleaned === "null" || cleaned === "undefined") return "";
+  return cleaned;
+}
+
 export class ResourceService {
   /**
    * Fetch public resources (works) with pagination, latest sorting, and optional keyword search.
@@ -30,7 +39,7 @@ export class ResourceService {
 
     let filter = visibilityCondition;
 
-    const trimmedKeyword = (keyword || "").trim();
+    const trimmedKeyword = cleanKeyword(keyword);
     if (trimmedKeyword) {
       const regex = new RegExp(escapeRegex(trimmedKeyword), "i");
 

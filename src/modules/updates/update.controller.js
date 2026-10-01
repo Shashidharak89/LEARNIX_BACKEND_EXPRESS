@@ -7,12 +7,12 @@ import { UpdateService } from "./update.service.js";
  * GET /api/updates/getupdates?page=1&size=10&keyword=""
  */
 export const getUpdates = asyncHandler(async (req, res) => {
-  const { page, size, keyword } = req.query;
+  const { page, size, keyword, q, search } = req.query;
 
   const result = await UpdateService.getUpdates({
     page,
     size,
-    keyword,
+    keyword: keyword ?? q ?? search ?? "",
   });
 
   return ApiResponse.success(res, {

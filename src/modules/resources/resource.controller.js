@@ -7,12 +7,12 @@ import { ResourceService } from "./resource.service.js";
  * GET /api/resources/getresources?page=1&size=10&keyword=""
  */
 export const getResources = asyncHandler(async (req, res) => {
-  const { page, size, keyword } = req.query;
+  const { page, size, keyword, q, search } = req.query;
 
   const result = await ResourceService.getResources({
     page,
     size,
-    keyword,
+    keyword: keyword ?? q ?? search ?? "",
   });
 
   return ApiResponse.success(res, {
