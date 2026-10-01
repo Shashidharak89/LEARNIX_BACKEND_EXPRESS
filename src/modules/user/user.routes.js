@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { getMe, verifyUser } from "./user.controller.js";
+import { getUserUpdates } from "../updates/authorized/authorized-updates.controller.js";
 import { authenticate } from "../../common/middleware/authenticate.js";
 
 const router = Router();
@@ -17,5 +18,11 @@ router.post("/me", authenticate, getMe);
 // Alias: GET /api/user/profile
 router.get("/profile", authenticate, getMe);
 
+// Authenticated user updates endpoints
+// GET /api/user/updates, GET /api/user/updates/getupdates
+router.get("/updates", authenticate, getUserUpdates);
+router.get("/updates/getupdates", authenticate, getUserUpdates);
+
 export default router;
+
 

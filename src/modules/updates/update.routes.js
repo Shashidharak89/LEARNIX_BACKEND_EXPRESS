@@ -1,16 +1,22 @@
 import { Router } from "express";
-import { getUpdates, getUpdateById } from "./update.controller.js";
+import publicUpdatesRoutes from "./public/public-updates.routes.js";
+import authorizedUpdatesRoutes from "./authorized/authorized-updates.routes.js";
 import latestTitlesRoutes from "./latest-titles/latest-titles.routes.js";
 
 const router = Router();
 
-// Sub-module route for Redis-cached latest titles: /api/updates/latest-titles
+// Authorized user updates endpoints (requires Authorization header)
+// GET /api/updates/user
+// GET /api/updates/user/getupdates
+// GET /api/updates/user/recent
+router.use("/user", authorizedUpdatesRoutes);
+router.use("/authorized", authorizedUpdatesRoutes);
+
+// Redis-cached latest titles endpoint: /api/updates/latest-titles
 router.use("/", latestTitlesRoutes);
 
-// GET /api/updates/getupdates?page=1&size=10&keyword=""
-router.get("/getupdates", getUpdates);
-
-// GET /api/update/getupdate/:id or /api/updates/getupdate/:id
-router.get("/getupdate/:id", getUpdateById);
+// Public updates endpoints: /api/updates/getupdates, /api/updates/getupdate/:id
+router.use("/", publicUpdatesRoutes);
 
 export default router;
+
