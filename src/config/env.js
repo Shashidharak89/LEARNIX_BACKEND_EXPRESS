@@ -10,5 +10,6 @@ export const env = {
   CLOUDINARY_NAME: process.env.CLOUDINARY_NAME || process.env.CLOUDINARY_CLOUD_NAME || "",
   CLOUDINARY_KEY: process.env.CLOUDINARY_KEY || process.env.CLOUDINARY_API_KEY || "",
   CLOUDINARY_SECRET: process.env.CLOUDINARY_SECRET || process.env.CLOUDINARY_API_SECRET || "",
+  REDIS_URL: process.env.REDIS_URL || "",
   CLIENT_URL: process.env.CLIENT_URL || "*",
 };
