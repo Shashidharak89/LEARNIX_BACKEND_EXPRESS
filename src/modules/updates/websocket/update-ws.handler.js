@@ -26,15 +26,68 @@ function sendEvent(ws, event, data = {}) {
 export function initUpdatesWebSocket(httpServer) {
   const wss = new WebSocketServer({ noServer: true });
 
-  // Handle HTTP Upgrade request
-  httpServer.on("upgrade", (request, socket, head) => {
+  // Handle HTTP Upgrade request with strict Authorization check
+  httpServer.on("upgrade", async (request, socket, head) => {
     try {
       const host = request.headers.host || "localhost";
       const url = new URL(request.url, `http://${host}`);
       const pathname = url.pathname;
 
       if (pathname === "/ws/updates/upload" || pathname === "/ws/updates") {
+        // Extract Bearer token from Authorization header or URL query parameter
+        let token = null;
+        const authHeader = request.headers.authorization || request.headers.Authorization;
+        if (authHeader && typeof authHeader === "string") {
+          token = authHeader.startsWith("Bearer ") ? authHeader.slice(7).trim() : authHeader.trim();
+        }
+        if (!token) {
+          token = url.searchParams.get("token") || url.searchParams.get("jwt");
+        }
+
+        // Strict authorization requirement: reject with 401 Unauthorized if token missing
+        if (!token) {
+          const errorPayload = JSON.stringify({
+            success: false,
+            statusCode: 401,
+            message: "Unauthorized: Missing Authorization header (Bearer <token>) or token parameter",
+          });
+          socket.write(
+            `HTTP/1.1 401 Unauthorized\r\n` +
+            `Content-Type: application/json\r\n` +
+            `Content-Length: ${Buffer.byteLength(errorPayload)}\r\n` +
+            `Connection: close\r\n\r\n` +
+            errorPayload
+          );
+          socket.destroy();
+          return;
+        }
+
+        // Validate token against database
+        const authResult = await getUserFromToken(token);
+        if (!authResult.valid || !authResult.user) {
+          const errorPayload = JSON.stringify({
+            success: false,
+            statusCode: 401,
+            message: authResult.error || "Unauthorized: Invalid or expired Bearer token",
+          });
+          socket.write(
+            `HTTP/1.1 401 Unauthorized\r\n` +
+            `Content-Type: application/json\r\n` +
+            `Content-Length: ${Buffer.byteLength(errorPayload)}\r\n` +
+            `Connection: close\r\n\r\n` +
+            errorPayload
+          );
+          socket.destroy();
+          return;
+        }
+
+        // Upgrade connection with authenticated user attached
+        request.user = authResult.user;
+        request.token = token;
+
         wss.handleUpgrade(request, socket, head, (ws) => {
+          ws.user = authResult.user;
+          ws.token = token;
           wss.emit("connection", ws, request);
         });
       }
@@ -47,48 +100,27 @@ export function initUpdatesWebSocket(httpServer) {
   // Client connection handler
   wss.on("connection", async (ws, request) => {
     ws.isAlive = true;
-    ws.user = null;
+    ws.user = ws.user || request.user;
     ws.activeSessionIds = new Set();
 
     ws.on("pong", () => {
       ws.isAlive = true;
     });
 
-    // Extract token from query params or headers if present
-    try {
-      const host = request.headers.host || "localhost";
-      const url = new URL(request.url, `http://${host}`);
-      let token = url.searchParams.get("token") || url.searchParams.get("jwt");
+    // Notify client that connection is authenticated and ready
+    sendEvent(ws, "authenticated", {
+      data: {
+        userId: ws.user._id,
+        name: ws.user.name,
+        usn: ws.user.usn,
+        message: "WebSocket successfully authenticated with Bearer token",
+      },
+    });
 
-      if (!token) {
-        const authHeader = request.headers.authorization || request.headers.Authorization;
-        if (authHeader && typeof authHeader === "string") {
-          token = authHeader.startsWith("Bearer ") ? authHeader.slice(7).trim() : authHeader.trim();
-        }
-      }
-
-      if (token) {
-        const authResult = await getUserFromToken(token);
-        if (authResult.valid && authResult.user) {
-          ws.user = authResult.user;
-          sendEvent(ws, "authenticated", {
-            data: {
-              userId: ws.user._id,
-              name: ws.user.name,
-              usn: ws.user.usn,
-            },
-          });
-        }
-      }
-    } catch (err) {
-      console.warn("[WebSocket Auth Header Warn]:", err.message);
-    }
-
-    // Inform client that connection is established
     sendEvent(ws, "connected", {
       data: {
-        message: "Connected to Learnix Updates Upload WebSocket",
-        authenticated: Boolean(ws.user),
+        message: "Connected to Learnix Updates Upload WebSocket (Authorized)",
+        authenticated: true,
       },
     });
 
