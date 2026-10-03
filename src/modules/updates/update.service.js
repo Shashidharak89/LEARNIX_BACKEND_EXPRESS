@@ -53,7 +53,10 @@ export class UpdateService {
 }
 
 export { PublicUpdatesService, AuthorizedUpdatesService };
-export { UpdateWebSocketService } from "./websocket/update-ws.service.js";
-export { initUpdatesWebSocket } from "./websocket/update-ws.handler.js";
+export {
+  DirectUploadService,
+  UpdateWebSocketService,
+  initUpdatesWebSocket,
+} from "./authorized/addupdates/index.js";
 
 

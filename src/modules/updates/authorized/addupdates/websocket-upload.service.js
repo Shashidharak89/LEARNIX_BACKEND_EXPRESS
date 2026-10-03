@@ -1,7 +1,7 @@
 import crypto from "crypto";
-import { CloudinaryService } from "../../../common/services/cloudinary.service.js";
-import { AuthorizedUpdatesService } from "../authorized/authorized-updates.service.js";
-import { ApiError } from "../../../common/utils/apiError.js";
+import { CloudinaryService } from "../../../../common/services/cloudinary.service.js";
+import { DirectUploadService } from "./direct-upload.service.js";
+import { ApiError } from "../../../../common/utils/apiError.js";
 
 // Session timeout: 15 minutes of inactivity before automatic cleanup
 const SESSION_TTL_MS = 15 * 60 * 1000;
@@ -202,7 +202,7 @@ export class UpdateWebSocketService {
 
     if (allFilesCompleted) {
       // Create update in MongoDB
-      createdUpdate = await AuthorizedUpdatesService.createUpdate({
+      createdUpdate = await DirectUploadService.createUpdate({
         userId: session.userId,
         title: session.title,
         content: session.content,
@@ -235,7 +235,7 @@ export class UpdateWebSocketService {
       throw new ApiError(404, `Upload session '${sessionId}' not found`);
     }
 
-    const createdUpdate = await AuthorizedUpdatesService.createUpdate({
+    const createdUpdate = await DirectUploadService.createUpdate({
       userId: session.userId,
       title: session.title,
       content: session.content,

@@ -2,7 +2,7 @@ import http from "http";
 import app from "./src/app.js";
 import { connectDB } from "./src/config/database.js";
 import { env } from "./src/config/env.js";
-import { initUpdatesWebSocket } from "./src/modules/updates/websocket/update-ws.handler.js";
+import { initUpdatesWebSocket } from "./src/modules/updates/authorized/addupdates/index.js";
 
 const PORT = env.PORT || 5000;
 

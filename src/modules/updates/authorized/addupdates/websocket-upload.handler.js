@@ -1,6 +1,6 @@
 import { WebSocketServer, WebSocket } from "ws";
-import { getUserFromToken } from "../../../common/utils/auth.helper.js";
-import { UpdateWebSocketService } from "./update-ws.service.js";
+import { getUserFromToken } from "../../../../common/utils/auth.helper.js";
+import { UpdateWebSocketService } from "./websocket-upload.service.js";
 
 /**
  * Send a structured JSON event to a WebSocket client.
@@ -139,7 +139,7 @@ export function initUpdatesWebSocket(httpServer) {
 
       try {
         switch (event) {
-          // 1. Explicit Authentication message
+          // 1. Explicit Authentication message (if token rotated)
           case "auth": {
             const token = data.token || data.jwt;
             if (!token) {
@@ -169,7 +169,7 @@ export function initUpdatesWebSocket(httpServer) {
           case "upload_init": {
             if (!ws.user) {
               return sendEvent(ws, "upload_error", {
-                error: "Authentication required before initiating upload. Send 'auth' event with JWT.",
+                error: "Authentication required before initiating upload.",
               });
             }
 
