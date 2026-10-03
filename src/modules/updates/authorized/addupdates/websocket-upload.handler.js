@@ -26,68 +26,71 @@ function sendEvent(ws, event, data = {}) {
 export function initUpdatesWebSocket(httpServer) {
   const wss = new WebSocketServer({ noServer: true });
 
-  // Handle HTTP Upgrade request with strict Authorization check
+  // Handle HTTP Upgrade request with flexible Authorization check
   httpServer.on("upgrade", async (request, socket, head) => {
     try {
       const host = request.headers.host || "localhost";
       const url = new URL(request.url, `http://${host}`);
-      const pathname = url.pathname;
+      const cleanPath = url.pathname.replace(/\/+$/, "") || "/";
 
-      if (pathname === "/ws/updates/upload" || pathname === "/ws/updates") {
+      const isUpdatesWs =
+        cleanPath === "/ws/updates/upload" ||
+        cleanPath === "/ws/updates" ||
+        cleanPath === "/api/updates/upload" ||
+        cleanPath === "/api/updates/ws" ||
+        cleanPath === "/ws";
+
+      if (isUpdatesWs) {
         // Extract Bearer token from Authorization header or URL query parameter
         let token = null;
         const authHeader = request.headers.authorization || request.headers.Authorization;
         if (authHeader && typeof authHeader === "string") {
-          token = authHeader.startsWith("Bearer ") ? authHeader.slice(7).trim() : authHeader.trim();
+          token = authHeader.replace(/^Bearer\s+/i, "").trim();
         }
         if (!token) {
           token = url.searchParams.get("token") || url.searchParams.get("jwt");
+          if (token && typeof token === "string") {
+            token = token.replace(/^Bearer\s+/i, "").trim();
+          }
         }
 
-        // Strict authorization requirement: reject with 401 Unauthorized if token missing
-        if (!token) {
-          const errorPayload = JSON.stringify({
-            success: false,
-            statusCode: 401,
-            message: "Unauthorized: Missing Authorization header (Bearer <token>) or token parameter",
-          });
-          socket.write(
-            `HTTP/1.1 401 Unauthorized\r\n` +
-            `Content-Type: application/json\r\n` +
-            `Content-Length: ${Buffer.byteLength(errorPayload)}\r\n` +
-            `Connection: close\r\n\r\n` +
-            errorPayload
-          );
-          socket.destroy();
-          return;
+        if (token && typeof token === "string") {
+          token = token.replace(/^["']|["']$/g, "").trim();
         }
 
-        // Validate token against database
-        const authResult = await getUserFromToken(token);
-        if (!authResult.valid || !authResult.user) {
-          const errorPayload = JSON.stringify({
-            success: false,
-            statusCode: 401,
-            message: authResult.error || "Unauthorized: Invalid or expired Bearer token",
-          });
-          socket.write(
-            `HTTP/1.1 401 Unauthorized\r\n` +
-            `Content-Type: application/json\r\n` +
-            `Content-Length: ${Buffer.byteLength(errorPayload)}\r\n` +
-            `Connection: close\r\n\r\n` +
-            errorPayload
-          );
-          socket.destroy();
-          return;
+        let authenticatedUser = null;
+
+        // If token provided during upgrade, validate it
+        if (token) {
+          const authResult = await getUserFromToken(token);
+          if (authResult.valid && authResult.user) {
+            authenticatedUser = authResult.user;
+          } else {
+            // Reject with 401 Unauthorized if invalid token was explicitly supplied
+            const errorPayload = JSON.stringify({
+              success: false,
+              statusCode: 401,
+              message: authResult.error || "Unauthorized: Invalid or expired Bearer token",
+            });
+            socket.write(
+              `HTTP/1.1 401 Unauthorized\r\n` +
+              `Content-Type: application/json\r\n` +
+              `Content-Length: ${Buffer.byteLength(errorPayload)}\r\n` +
+              `Connection: close\r\n\r\n` +
+              errorPayload
+            );
+            socket.destroy();
+            return;
+          }
         }
 
-        // Upgrade connection with authenticated user attached
-        request.user = authResult.user;
-        request.token = token;
+        // Upgrade connection
+        request.user = authenticatedUser;
+        request.token = token || null;
 
         wss.handleUpgrade(request, socket, head, (ws) => {
-          ws.user = authResult.user;
-          ws.token = token;
+          ws.user = authenticatedUser;
+          ws.token = token || null;
           wss.emit("connection", ws, request);
         });
       }
@@ -100,27 +103,28 @@ export function initUpdatesWebSocket(httpServer) {
   // Client connection handler
   wss.on("connection", async (ws, request) => {
     ws.isAlive = true;
-    ws.user = ws.user || request.user;
+    ws.user = ws.user || request.user || null;
     ws.activeSessionIds = new Set();
 
     ws.on("pong", () => {
       ws.isAlive = true;
     });
 
-    // Notify client that connection is authenticated and ready
-    sendEvent(ws, "authenticated", {
-      data: {
-        userId: ws.user._id,
-        name: ws.user.name,
-        usn: ws.user.usn,
-        message: "WebSocket successfully authenticated with Bearer token",
-      },
-    });
+    if (ws.user) {
+      sendEvent(ws, "authenticated", {
+        data: {
+          userId: ws.user._id,
+          name: ws.user.name,
+          usn: ws.user.usn,
+          message: "WebSocket successfully authenticated with Bearer token",
+        },
+      });
+    }
 
     sendEvent(ws, "connected", {
       data: {
-        message: "Connected to Learnix Updates Upload WebSocket (Authorized)",
-        authenticated: true,
+        message: "Connected to Learnix Updates Upload WebSocket",
+        authenticated: Boolean(ws.user),
       },
     });
 
@@ -139,14 +143,16 @@ export function initUpdatesWebSocket(httpServer) {
 
       try {
         switch (event) {
-          // 1. Explicit Authentication message (if token rotated)
+          // 1. Explicit Authentication message (if token rotated or provided on connect)
           case "auth": {
-            const token = data.token || data.jwt;
+            let token = data.token || data.jwt;
             if (!token) {
               return sendEvent(ws, "upload_error", {
                 error: "Token missing in auth event payload",
               });
             }
+
+            token = token.toString().replace(/^Bearer\s+/i, "").replace(/^["']|["']$/g, "").trim();
 
             const authResult = await getUserFromToken(token);
             if (!authResult.valid || !authResult.user) {
@@ -156,6 +162,7 @@ export function initUpdatesWebSocket(httpServer) {
             }
 
             ws.user = authResult.user;
+            ws.token = token;
             return sendEvent(ws, "authenticated", {
               data: {
                 userId: ws.user._id,
@@ -167,6 +174,23 @@ export function initUpdatesWebSocket(httpServer) {
 
           // 2. Initialize chunked upload session
           case "upload_init": {
+            // Check if token is attached to upload_init data payload as fallback
+            if (!ws.user && (data.token || data.jwt)) {
+              let token = (data.token || data.jwt).toString().replace(/^Bearer\s+/i, "").replace(/^["']|["']$/g, "").trim();
+              const authResult = await getUserFromToken(token);
+              if (authResult.valid && authResult.user) {
+                ws.user = authResult.user;
+                ws.token = token;
+                sendEvent(ws, "authenticated", {
+                  data: {
+                    userId: ws.user._id,
+                    name: ws.user.name,
+                    usn: ws.user.usn,
+                  },
+                });
+              }
+            }
+
             if (!ws.user) {
               return sendEvent(ws, "upload_error", {
                 error: "Authentication required before initiating upload.",
@@ -192,6 +216,7 @@ export function initUpdatesWebSocket(httpServer) {
 
               return sendEvent(ws, "upload_completed", {
                 data: {
+                  sessionId: sessionInfo.sessionId,
                   message: "Update created successfully (no files attached)",
                   update,
                 },

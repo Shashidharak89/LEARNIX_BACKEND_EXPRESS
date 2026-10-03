@@ -20,6 +20,12 @@ router.use("/authorized", authorizedUpdatesRoutes);
 
 // Root-level authorized create update endpoints with multiple file uploads (requires Authorization header)
 // POST /api/updates/upload, POST /api/updates/create, POST /api/updates
+router.get("/upload", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Learnix Updates upload endpoint. Use POST with multipart/form-data for direct upload or WebSocket at /ws/updates/upload",
+  });
+});
 router.post("/upload", authenticate, uploadFilesMiddleware, createUpdateDirect);
 router.post("/create", authenticate, uploadFilesMiddleware, createUpdateDirect);
 router.post("/", authenticate, uploadFilesMiddleware, createUpdateDirect);

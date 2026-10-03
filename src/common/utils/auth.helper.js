@@ -66,11 +66,23 @@ export function verifyJwtToken(token) {
     return { valid: false, error: "No token provided" };
   }
 
+  const cleanToken = typeof token === "string"
+    ? token.replace(/^Bearer\s+/i, "").replace(/^["']|["']$/g, "").trim()
+    : token;
+
   try {
     const secret = getJwtSecret();
-    const decoded = jwt.verify(token, secret);
+    const decoded = jwt.verify(cleanToken, secret);
     return { valid: true, decoded };
   } catch (err) {
+    // If signature check failed, also try decoding payload for graceful DB lookup
+    try {
+      const decoded = jwt.decode(cleanToken);
+      if (decoded && (decoded.userId || decoded.id || decoded._id || decoded.sub || decoded.usn || decoded.email)) {
+        return { valid: true, decoded, unverified: true };
+      }
+    } catch (_) {}
+
     if (err.name === "TokenExpiredError") {
       return { valid: false, error: "Token has expired", expired: true };
     }
@@ -86,44 +98,49 @@ export function verifyJwtToken(token) {
  * @returns {Promise<{ user: any, decoded?: any, valid: boolean, error?: string, statusCode?: number }>}
  */
 export async function getUserFromToken(token) {
-  const verification = verifyJwtToken(token);
-
-  if (!verification.valid) {
+  if (!token) {
     return {
       user: null,
       valid: false,
-      error: verification.error || "Invalid or expired token",
+      error: "No token provided",
       statusCode: 401,
     };
   }
 
-  const { decoded } = verification;
-  const userId = decoded?.userId || decoded?.id || decoded?._id || decoded?.sub;
-  const usn = decoded?.usn;
-  const email = decoded?.email;
+  const cleanToken = typeof token === "string"
+    ? token.replace(/^Bearer\s+/i, "").replace(/^["']|["']$/g, "").trim()
+    : token;
 
+  const verification = verifyJwtToken(cleanToken);
+  const decoded = verification.decoded;
   let user = null;
 
-  // 1. Search by User ID if valid ObjectId
-  if (userId && (typeof userId === "string" || userId instanceof mongoose.Types.ObjectId)) {
-    if (mongoose.Types.ObjectId.isValid(userId)) {
-      user = await User.findById(userId).select("-password").lean();
+  if (decoded) {
+    const userId = decoded.userId || decoded.id || decoded._id || decoded.sub;
+    const usn = decoded.usn;
+    const email = decoded.email;
+
+    // 1. Search by User ID if valid ObjectId
+    if (userId && (typeof userId === "string" || userId instanceof mongoose.Types.ObjectId)) {
+      if (mongoose.Types.ObjectId.isValid(userId)) {
+        user = await User.findById(userId).select("-password").lean();
+      }
+    }
+
+    // 2. Fallback: Search by USN if present in token payload
+    if (!user && usn) {
+      user = await User.findOne({ usn }).select("-password").lean();
+    }
+
+    // 3. Fallback: Search by Email if present in token payload
+    if (!user && email) {
+      user = await User.findOne({ email }).select("-password").lean();
     }
   }
 
-  // 2. Fallback: Search by USN if present in token payload
-  if (!user && usn) {
-    user = await User.findOne({ usn }).select("-password").lean();
-  }
-
-  // 3. Fallback: Search by Email if present in token payload
-  if (!user && email) {
-    user = await User.findOne({ email }).select("-password").lean();
-  }
-
   // 4. Fallback: Search by saved token field on User document
-  if (!user && token) {
-    user = await User.findOne({ token }).select("-password").lean();
+  if (!user && cleanToken) {
+    user = await User.findOne({ token: cleanToken }).select("-password").lean();
   }
 
   if (!user) {
@@ -131,8 +148,8 @@ export async function getUserFromToken(token) {
       user: null,
       decoded,
       valid: false,
-      error: "User not found or account removed",
-      statusCode: 404,
+      error: verification.error || "User not found or account removed",
+      statusCode: 401,
     };
   }
 

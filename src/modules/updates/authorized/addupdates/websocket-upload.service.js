@@ -55,13 +55,17 @@ export class UpdateWebSocketService {
     if (Array.isArray(files)) {
       files.forEach((fileInfo, index) => {
         const fileId = fileInfo.fileId || `file_${index}_${crypto.randomBytes(2).toString("hex")}`;
-        const totalChunks = Math.max(1, parseInt(fileInfo.totalChunks, 10) || 1);
+        const fileSize = parseInt(fileInfo.fileSize, 10) || 0;
+        const totalChunks = Math.max(
+          1,
+          parseInt(fileInfo.totalChunks, 10) || (fileSize > 0 ? Math.ceil(fileSize / (256 * 1024)) : 1)
+        );
         totalExpectedChunks += totalChunks;
 
         filesMap.set(fileId, {
           fileId,
           fileName: fileInfo.fileName || `file_${index + 1}`,
-          fileSize: fileInfo.fileSize || 0,
+          fileSize,
           totalChunks,
           chunksReceived: new Set(),
           chunks: new Array(totalChunks),
@@ -147,7 +151,11 @@ export class UpdateWebSocketService {
     if (Buffer.isBuffer(chunkData)) {
       buffer = chunkData;
     } else if (typeof chunkData === "string") {
-      buffer = Buffer.from(chunkData, "base64");
+      let rawBase64 = chunkData;
+      if (rawBase64.includes(";base64,")) {
+        rawBase64 = rawBase64.split(";base64,")[1];
+      }
+      buffer = Buffer.from(rawBase64, "base64");
     } else {
       throw new ApiError(400, "chunkData must be a Base64 string or a Buffer");
     }
@@ -169,20 +177,41 @@ export class UpdateWebSocketService {
     let createdUpdate = null;
 
     // Check if this file has received all chunks
-    if (file.chunksReceived.size === tot && !file.isCompleted) {
+    if (file.chunksReceived.size >= tot && !file.isCompleted) {
       file.isCompleted = true;
 
-      // Concatenate all chunks for this file
-      const completeBuffer = Buffer.concat(file.chunks);
+      // Concatenate all chunks for this file safely without sparse holes
+      const chunksList = [];
+      for (let i = 0; i < tot; i++) {
+        if (file.chunks[i]) {
+          chunksList.push(file.chunks[i]);
+        }
+      }
+      const completeBuffer = Buffer.concat(chunksList);
       // Free individual chunk references from memory
       file.chunks = [];
 
       // Upload assembled file to Cloudinary
-      const cloudinaryResult = await CloudinaryService.uploadBuffer(completeBuffer, {
-        folder: "learnix/updates",
-        filename: file.fileName,
-        resourceType: "auto",
-      });
+      let cloudinaryResult;
+      try {
+        if (completeBuffer.length > 0) {
+          cloudinaryResult = await CloudinaryService.uploadBuffer(completeBuffer, {
+            folder: "learnix/updates",
+            filename: file.fileName,
+            resourceType: "auto",
+          });
+        } else {
+          cloudinaryResult = {
+            url: "",
+            publicId: `empty_${file.fileId}`,
+            name: file.fileName,
+            resourceType: "raw",
+          };
+        }
+      } catch (uploadErr) {
+        await this.cleanupSession(sessionId, true);
+        throw new ApiError(500, `Cloudinary upload failed: ${uploadErr.message}`);
+      }
 
       uploadedFile = {
         url: cloudinaryResult.url,
@@ -202,17 +231,22 @@ export class UpdateWebSocketService {
 
     if (allFilesCompleted) {
       // Create update in MongoDB
-      createdUpdate = await DirectUploadService.createUpdate({
-        userId: session.userId,
-        title: session.title,
-        content: session.content,
-        links: session.links,
-        visibility: session.visibility,
-        files: session.uploadedCloudinaryFiles,
-      });
+      try {
+        createdUpdate = await DirectUploadService.createUpdate({
+          userId: session.userId,
+          title: session.title,
+          content: session.content,
+          links: session.links,
+          visibility: session.visibility,
+          files: session.uploadedCloudinaryFiles,
+        });
+      } catch (dbErr) {
+        await this.cleanupSession(sessionId, true);
+        throw new ApiError(500, `Failed to save update to database: ${dbErr.message}`);
+      }
 
       // Cleanup session state
-      this.cleanupSession(sessionId, false);
+      await this.cleanupSession(sessionId, false);
     }
 
     return {

@@ -25,6 +25,15 @@ app.get("/health", (req, res) => {
   res.status(200).json({ status: "OK", timestamp: new Date().toISOString() });
 });
 
+// WebSocket endpoints HTTP informational status
+app.get(["/ws/updates/upload", "/ws/updates", "/api/updates/ws"], (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Learnix Updates WebSocket upload endpoint. Connect using WebSocket protocol (ws:// or wss://).",
+    timestamp: new Date().toISOString(),
+  });
+});
+
 // Feature Routes
 // Mount both /api/updates and /api/update to handle /api/updates/getupdates and /api/update/getupdate/:id
 app.use("/api/updates", updateRoutes);
