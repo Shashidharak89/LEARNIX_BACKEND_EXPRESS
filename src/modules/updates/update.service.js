@@ -36,8 +36,24 @@ export class UpdateService {
   static async deleteUpdateById(params) {
     return AuthorizedUpdatesService.deleteUpdateById(params);
   }
+
+  /**
+   * Directly upload attached files to Cloudinary and create update document in MongoDB.
+   */
+  static async createUpdateDirect(params) {
+    return AuthorizedUpdatesService.createUpdateDirect(params);
+  }
+
+  /**
+   * Create an update in MongoDB and invalidate cached latest titles.
+   */
+  static async createUpdate(params) {
+    return AuthorizedUpdatesService.createUpdate(params);
+  }
 }
 
 export { PublicUpdatesService, AuthorizedUpdatesService };
+export { UpdateWebSocketService } from "./websocket/update-ws.service.js";
+export { initUpdatesWebSocket } from "./websocket/update-ws.handler.js";
 
 

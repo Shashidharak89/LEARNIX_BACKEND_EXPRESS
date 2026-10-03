@@ -1,6 +1,8 @@
 import { Router } from "express";
 import { authenticate } from "../../../common/middleware/authenticate.js";
+import { uploadFilesMiddleware } from "../../../common/middleware/upload.js";
 import {
+  createUpdateDirect,
   getUserUpdates,
   updateUpdateById,
   deleteUpdateById,
@@ -10,6 +12,14 @@ const router = Router();
 
 // Protect all authorized update endpoints with JWT authentication middleware
 router.use(authenticate);
+
+// CREATE update directly with multiple file uploads (multipart/form-data)
+// POST /api/updates/user
+// POST /api/updates/user/create
+// POST /api/updates/user/upload
+router.post("/", uploadFilesMiddleware, createUpdateDirect);
+router.post("/create", uploadFilesMiddleware, createUpdateDirect);
+router.post("/upload", uploadFilesMiddleware, createUpdateDirect);
 
 // GET /api/updates/user
 // GET /api/updates/user/getupdates

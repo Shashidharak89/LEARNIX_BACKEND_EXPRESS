@@ -1,6 +1,8 @@
+import http from "http";
 import app from "./src/app.js";
 import { connectDB } from "./src/config/database.js";
 import { env } from "./src/config/env.js";
+import { initUpdatesWebSocket } from "./src/modules/updates/websocket/update-ws.handler.js";
 
 const PORT = env.PORT || 5000;
 
@@ -9,10 +11,18 @@ async function startServer() {
     // Connect to MongoDB
     await connectDB();
 
-    const server = app.listen(PORT, () => {
+    // Create Node HTTP server wrapping Express app
+    const server = http.createServer(app);
+
+    // Initialize WebSocket server for chunked updates upload
+    const wss = initUpdatesWebSocket(server);
+
+    server.listen(PORT, () => {
       console.log(`🚀 Learnix Express API running on port ${PORT} in ${env.NODE_ENV} mode`);
       console.log(`👉 Health check: http://localhost:${PORT}/health`);
       console.log(`👉 Updates API: http://localhost:${PORT}/api/updates/getupdates`);
+      console.log(`👉 Upload Updates (Direct): POST http://localhost:${PORT}/api/updates/upload`);
+      console.log(`👉 Upload Updates (WebSocket): ws://localhost:${PORT}/ws/updates/upload`);
       console.log(`👉 Resources API: http://localhost:${PORT}/api/resources/getresources`);
     });
 

@@ -17,7 +17,6 @@ if (env.REDIS_URL) {
         return Math.min(times * 200, 2000);
       },
     });
-
     redisClient.on("connect", () => {
       console.log("[Redis] Connected to Redis server");
     });

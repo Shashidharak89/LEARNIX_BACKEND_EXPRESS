@@ -3,17 +3,26 @@ import publicUpdatesRoutes from "./public/public-updates.routes.js";
 import authorizedUpdatesRoutes from "./authorized/authorized-updates.routes.js";
 import latestTitlesRoutes from "./latest-titles/latest-titles.routes.js";
 import { authenticate } from "../../common/middleware/authenticate.js";
+import { uploadFilesMiddleware } from "../../common/middleware/upload.js";
 import {
+  createUpdateDirect,
   updateUpdateById,
   deleteUpdateById,
 } from "./authorized/authorized-updates.controller.js";
 
 const router = Router();
 
-// Authorized user updates endpoints (requires Authorization header)
+// Authorized user updates endpoints (re
+// quires Authorization header)
 // Handles /api/updates/user/* and /api/updates/authorized/*
 router.use("/user", authorizedUpdatesRoutes);
 router.use("/authorized", authorizedUpdatesRoutes);
+
+// Root-level authorized create update endpoints with multiple file uploads (requires Authorization header)
+// POST /api/updates/upload, POST /api/updates/create, POST /api/updates
+router.post("/upload", authenticate, uploadFilesMiddleware, createUpdateDirect);
+router.post("/create", authenticate, uploadFilesMiddleware, createUpdateDirect);
+router.post("/", authenticate, uploadFilesMiddleware, createUpdateDirect);
 
 // Root-level authorized update endpoints (requires Authorization header)
 // PUT /api/updates/:id, PATCH /api/updates/:id, PUT /api/update/:id
