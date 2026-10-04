@@ -172,18 +172,41 @@ export class ResourceService {
 
     const rawImages = Array.isArray(topic.images) ? topic.images : [];
 
-    return {
-      _id: topic._id,
+    const fullTopic = {
+      _id: topic._id.toString(),
       topic: topic.topic,
       content: topic.content || "",
-      images: rawImages.slice(0, 2),
+      images: rawImages,
+      visibility: topic.visibility || "public",
+      downloadlink: topic.downloadlink || "",
+      timestamp: topic.timestamp,
+    };
+
+    const fullUser = {
+      _id: user?._id?.toString() || topic.userId?.toString() || "",
+      name: user?.name || "Unknown",
+      usn: user?.usn || "",
+      profileimg: user?.profileimg || "",
+    };
+
+    const fullSubject = {
+      _id: subject?._id?.toString() || topic.subjectId?.toString() || "",
+      subject: subject?.subject || "",
+      visibility: subject?.visibility || "public",
+    };
+
+    return {
+      viewer: null,
+      user: fullUser,
+      subject: fullSubject,
+      topic: fullTopic,
+      _id: topic._id,
+      images: rawImages,
       totalImages: rawImages.length,
       downloadlink: topic.downloadlink || "",
       visibility: topic.visibility || "public",
       timestamp: topic.timestamp,
       subjectId: topic.subjectId || null,
-      subject: subject ? subject.subject : null,
-      userId: topic.userId || subject?.userId || null,
       author: {
         name: user?.name || null,
         usn: user?.usn || null,

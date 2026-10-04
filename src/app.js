@@ -43,8 +43,9 @@ app.get(["/ws/updates/upload", "/ws/updates", "/api/updates/ws"], (req, res) => 
 app.use("/api/updates", updateRoutes);
 app.use("/api/update", updateRoutes);
 
-// Resources routes: /api/resources/getresources
+// Resources routes: /api/resources/getresources and legacy /api/work aliases
 app.use("/api/resources", resourceRoutes);
+app.use("/api/work", resourceRoutes);
 
 // Study Materials routes: /api/study-materials, /api/sm/tree, /api/sm/v1/*
 app.use("/api/study-materials", legacyStudyMaterialsRoutes);
