@@ -32,9 +32,9 @@ router.post("/", authenticate, uploadFilesMiddleware, createUpdateDirect);
 
 // Root-level authorized update endpoints (requires Authorization header)
 // PUT /api/updates/:id, PATCH /api/updates/:id, PUT /api/update/:id
-router.put("/:id", authenticate, updateUpdateById);
-router.patch("/:id", authenticate, updateUpdateById);
-router.put("/update/:id", authenticate, updateUpdateById);
+router.put("/:id", authenticate, uploadFilesMiddleware, updateUpdateById);
+router.patch("/:id", authenticate, uploadFilesMiddleware, updateUpdateById);
+router.put("/update/:id", authenticate, uploadFilesMiddleware, updateUpdateById);
 
 // Root-level authorized delete endpoints (requires Authorization header)
 // DELETE /api/updates/:id, DELETE /api/update/:id, DELETE /api/updates/delete/:id

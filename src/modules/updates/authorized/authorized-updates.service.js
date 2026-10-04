@@ -133,8 +133,9 @@ export class AuthorizedUpdatesService {
    * @param {string} params.userId
    * @param {string} params.userRole
    * @param {object} params.data
+   * @param {Array<Express.Multer.File>} [params.uploadedFiles]
    */
-  static async updateUpdateById({ id, userId, userRole, data = {} }) {
+  static async updateUpdateById({ id, userId, userRole, data = {}, uploadedFiles = [] }) {
     if (!id || !mongoose.Types.ObjectId.isValid(id)) {
       throw new ApiError(400, "Invalid update ID");
     }
@@ -157,7 +158,7 @@ export class AuthorizedUpdatesService {
       throw new ApiError(403, "Forbidden: You are not authorized to edit this update");
     }
 
-    const { title, content, links, files, visibility } = data;
+    const { title, content, links, files, visibility, existingFiles } = data;
 
     // Validate visibility if provided
     if (visibility !== undefined) {
@@ -188,11 +189,73 @@ export class AuthorizedUpdatesService {
     }
 
     if (links !== undefined) {
-      update.links = Array.isArray(links) ? links : [links];
+      if (Array.isArray(links)) {
+        update.links = links
+          .map((l) => (typeof l === "string" ? l.trim() : String(l).trim()))
+          .filter(Boolean);
+      } else if (typeof links === "string") {
+        try {
+          const parsed = JSON.parse(links);
+          update.links = Array.isArray(parsed)
+            ? parsed.map((l) => String(l).trim()).filter(Boolean)
+            : [links.trim()];
+        } catch {
+          update.links = links
+            .split(/[\n,]+/)
+            .map((l) => l.trim())
+            .filter(Boolean);
+        }
+      }
     }
 
-    if (files !== undefined) {
-      update.files = Array.isArray(files) ? files : [files];
+    // Upload any newly attached files to Cloudinary
+    let newCloudinaryFiles = [];
+    if (Array.isArray(uploadedFiles) && uploadedFiles.length > 0) {
+      const uploadPromises = uploadedFiles.map(async (file) => {
+        const result = await CloudinaryService.uploadBuffer(file.buffer, {
+          folder: "learnix/updates",
+          filename: file.originalname,
+          resourceType: "auto",
+        });
+        return {
+          url: result.url,
+          publicId: result.publicId,
+          name: file.originalname || result.name,
+          resourceType: result.resourceType,
+        };
+      });
+      newCloudinaryFiles = await Promise.all(uploadPromises);
+    }
+
+    // Parse existing files if explicitly passed (e.g. from edit form with deleted files)
+    let parsedExisting = null;
+    if (existingFiles !== undefined) {
+      if (Array.isArray(existingFiles)) {
+        parsedExisting = existingFiles;
+      } else if (typeof existingFiles === "string") {
+        try {
+          const parsed = JSON.parse(existingFiles);
+          if (Array.isArray(parsed)) parsedExisting = parsed;
+        } catch {
+          parsedExisting = [];
+        }
+      }
+    }
+
+    if (newCloudinaryFiles.length > 0 || parsedExisting !== null) {
+      const baseFiles = parsedExisting !== null ? parsedExisting : (update.files || []);
+      update.files = [...baseFiles, ...newCloudinaryFiles];
+    } else if (files !== undefined) {
+      if (Array.isArray(files)) {
+        update.files = files;
+      } else if (typeof files === "string") {
+        try {
+          const parsed = JSON.parse(files);
+          update.files = Array.isArray(parsed) ? parsed : [];
+        } catch {
+          update.files = [];
+        }
+      }
     }
 
     await update.save();

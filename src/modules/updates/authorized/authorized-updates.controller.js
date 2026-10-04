@@ -40,12 +40,14 @@ export const updateUpdateById = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const userId = req.user?._id || req.user?.id;
   const userRole = req.user?.role || "user";
+  const uploadedFiles = req.uploadedFiles || [];
 
   const updatedUpdate = await AuthorizedUpdatesService.updateUpdateById({
     id,
     userId,
     userRole,
     data: req.body,
+    uploadedFiles,
   });
 
   return ApiResponse.success(res, {

@@ -31,9 +31,9 @@ router.get("/recent", getUserUpdates);
 // UPDATE update by ID
 // PUT /api/updates/user/:id, PATCH /api/updates/user/:id
 // PUT /api/updates/user/update/:id
-router.put("/:id", updateUpdateById);
-router.patch("/:id", updateUpdateById);
-router.put("/update/:id", updateUpdateById);
+router.put("/:id", uploadFilesMiddleware, updateUpdateById);
+router.patch("/:id", uploadFilesMiddleware, updateUpdateById);
+router.put("/update/:id", uploadFilesMiddleware, updateUpdateById);
 
 // DELETE update by ID
 // DELETE /api/updates/user/:id

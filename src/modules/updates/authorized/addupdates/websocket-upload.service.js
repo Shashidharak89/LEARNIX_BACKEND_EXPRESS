@@ -1,6 +1,7 @@
 import crypto from "crypto";
 import { CloudinaryService } from "../../../../common/services/cloudinary.service.js";
 import { DirectUploadService } from "./direct-upload.service.js";
+import { AuthorizedUpdatesService } from "../authorized-updates.service.js";
 import { ApiError } from "../../../../common/utils/apiError.js";
 
 // Session timeout: 15 minutes of inactivity before automatic cleanup
@@ -15,22 +16,29 @@ export class UpdateWebSocketService {
 
   /**
    * Initialize a new chunked upload session for an authenticated user.
+   * Supports both creating a new update and editing an existing update.
    * @param {object} params
    * @param {string} params.userId
+   * @param {string} [params.userRole]
    * @param {string} params.title
    * @param {string} params.content
    * @param {string[]|string} params.links
    * @param {string} params.visibility
    * @param {Array<{ fileId: string, fileName: string, totalChunks: number, fileSize?: number }>} params.files
+   * @param {string|null} [params.updateId]
+   * @param {Array<object>} [params.existingFiles]
    * @returns {object} Session metadata
    */
   static createSession({
     userId,
+    userRole = "user",
     title,
     content,
     links = [],
     visibility = "public",
     files = [],
+    updateId = null,
+    existingFiles = [],
   }) {
     if (!userId) {
       throw new ApiError(401, "Authentication required to initiate upload session");
@@ -78,6 +86,9 @@ export class UpdateWebSocketService {
     const session = {
       sessionId,
       userId,
+      userRole: userRole || "user",
+      updateId: updateId ? String(updateId).trim() : null,
+      existingFiles: Array.isArray(existingFiles) ? existingFiles : [],
       title: trimmedTitle,
       content: trimmedContent,
       links,
@@ -230,16 +241,35 @@ export class UpdateWebSocketService {
     );
 
     if (allFilesCompleted) {
-      // Create update in MongoDB
+      // Save or update document in MongoDB
       try {
-        createdUpdate = await DirectUploadService.createUpdate({
-          userId: session.userId,
-          title: session.title,
-          content: session.content,
-          links: session.links,
-          visibility: session.visibility,
-          files: session.uploadedCloudinaryFiles,
-        });
+        if (session.updateId) {
+          const finalFiles = [
+            ...session.existingFiles,
+            ...session.uploadedCloudinaryFiles,
+          ];
+          createdUpdate = await AuthorizedUpdatesService.updateUpdateById({
+            id: session.updateId,
+            userId: session.userId,
+            userRole: session.userRole,
+            data: {
+              title: session.title,
+              content: session.content,
+              links: session.links,
+              visibility: session.visibility,
+              files: finalFiles,
+            },
+          });
+        } else {
+          createdUpdate = await DirectUploadService.createUpdate({
+            userId: session.userId,
+            title: session.title,
+            content: session.content,
+            links: session.links,
+            visibility: session.visibility,
+            files: session.uploadedCloudinaryFiles,
+          });
+        }
       } catch (dbErr) {
         await this.cleanupSession(sessionId, true);
         throw new ApiError(500, `Failed to save update to database: ${dbErr.message}`);
@@ -269,17 +299,33 @@ export class UpdateWebSocketService {
       throw new ApiError(404, `Upload session '${sessionId}' not found`);
     }
 
-    const createdUpdate = await DirectUploadService.createUpdate({
-      userId: session.userId,
-      title: session.title,
-      content: session.content,
-      links: session.links,
-      visibility: session.visibility,
-      files: [],
-    });
+    let resultUpdate;
+    if (session.updateId) {
+      resultUpdate = await AuthorizedUpdatesService.updateUpdateById({
+        id: session.updateId,
+        userId: session.userId,
+        userRole: session.userRole,
+        data: {
+          title: session.title,
+          content: session.content,
+          links: session.links,
+          visibility: session.visibility,
+          files: session.existingFiles,
+        },
+      });
+    } else {
+      resultUpdate = await DirectUploadService.createUpdate({
+        userId: session.userId,
+        title: session.title,
+        content: session.content,
+        links: session.links,
+        visibility: session.visibility,
+        files: [],
+      });
+    }
 
     this.cleanupSession(sessionId, false);
-    return createdUpdate;
+    return resultUpdate;
   }
 
   /**

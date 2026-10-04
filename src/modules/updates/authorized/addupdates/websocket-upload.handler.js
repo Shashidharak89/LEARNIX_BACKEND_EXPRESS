@@ -1,6 +1,7 @@
 import { WebSocketServer, WebSocket } from "ws";
 import { getUserFromToken } from "../../../../common/utils/auth.helper.js";
 import { UpdateWebSocketService } from "./websocket-upload.service.js";
+import Update from "../../../../models/updates/Update.js";
 
 /**
  * Send a structured JSON event to a WebSocket client.
@@ -172,7 +173,9 @@ export function initUpdatesWebSocket(httpServer) {
             });
           }
 
-          // 2. Initialize chunked upload session
+          // 2. Initialize chunked upload session (create or edit)
+          case "edit_update":
+          case "edit_init":
           case "upload_init": {
             // Check if token is attached to upload_init data payload as fallback
             if (!ws.user && (data.token || data.jwt)) {
@@ -197,17 +200,45 @@ export function initUpdatesWebSocket(httpServer) {
               });
             }
 
-            const { title, content, links, visibility, files = [] } = data;
+            const {
+              title,
+              content,
+              links,
+              visibility,
+              files = [],
+              updateId,
+              existingFiles = [],
+            } = data;
 
-            // If no files attached, create update directly
+            // If editing an existing update, verify ownership
+            if (updateId) {
+              const existingDoc = await Update.findById(updateId);
+              if (!existingDoc) {
+                return sendEvent(ws, "upload_error", {
+                  error: "Update to edit not found",
+                });
+              }
+              const isOwner = existingDoc.userId.toString() === ws.user._id.toString();
+              const isAdmin = ws.user.role === "admin" || ws.user.role === "superadmin";
+              if (!isOwner && !isAdmin) {
+                return sendEvent(ws, "upload_error", {
+                  error: "Forbidden: You are not authorized to edit this update",
+                });
+              }
+            }
+
+            // If no files attached, create or edit update directly
             if (!Array.isArray(files) || files.length === 0) {
               const sessionInfo = UpdateWebSocketService.createSession({
                 userId: ws.user._id,
+                userRole: ws.user.role || "user",
                 title,
                 content,
                 links,
                 visibility,
                 files: [],
+                updateId,
+                existingFiles,
               });
 
               const update = await UpdateWebSocketService.finalizeWithoutFiles(
@@ -217,7 +248,9 @@ export function initUpdatesWebSocket(httpServer) {
               return sendEvent(ws, "upload_completed", {
                 data: {
                   sessionId: sessionInfo.sessionId,
-                  message: "Update created successfully (no files attached)",
+                  message: updateId
+                    ? "Update edited successfully"
+                    : "Update created successfully (no files attached)",
                   update,
                 },
               });
@@ -225,11 +258,14 @@ export function initUpdatesWebSocket(httpServer) {
 
             const sessionInfo = UpdateWebSocketService.createSession({
               userId: ws.user._id,
+              userRole: ws.user.role || "user",
               title,
               content,
               links,
               visibility,
               files,
+              updateId,
+              existingFiles,
             });
 
             ws.activeSessionIds.add(sessionInfo.sessionId);
@@ -239,7 +275,9 @@ export function initUpdatesWebSocket(httpServer) {
                 sessionId: sessionInfo.sessionId,
                 totalFiles: sessionInfo.totalFiles,
                 totalExpectedChunks: sessionInfo.totalExpectedChunks,
-                message: "Session created. Ready to receive file chunks.",
+                message: updateId
+                  ? "Edit session created. Ready to receive file chunks."
+                  : "Session created. Ready to receive file chunks.",
               },
             });
           }
