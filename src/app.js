@@ -3,6 +3,8 @@ import cors from "cors";
 import updateRoutes from "./modules/updates/update.routes.js";
 import resourceRoutes from "./modules/resources/resource.routes.js";
 import userRoutes from "./modules/user/user.routes.js";
+import smRoutes from "./modules/study-materials/study-materials.routes.js";
+import legacyStudyMaterialsRoutes from "./modules/study-materials/legacy/legacy-materials.routes.js";
 import { errorHandler } from "./common/middleware/errorHandler.js";
 import { ApiError } from "./common/utils/apiError.js";
 
@@ -41,6 +43,10 @@ app.use("/api/update", updateRoutes);
 
 // Resources routes: /api/resources/getresources
 app.use("/api/resources", resourceRoutes);
+
+// Study Materials routes: /api/study-materials, /api/sm/tree, /api/sm/v1/*
+app.use("/api/study-materials", legacyStudyMaterialsRoutes);
+app.use("/api/sm", smRoutes);
 
 // User & Auth routes: /api/user/me, /api/auth/me, /api/me
 app.use("/api/user", userRoutes);

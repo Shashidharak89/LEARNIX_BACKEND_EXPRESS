@@ -1,0 +1,849 @@
+// src/data/materialsData.js
+
+const materialsData = [
+    {
+        semester: "1st Sem - MCA 2025-27",
+        subjects: [
+            {
+                subject: "Syllabus",
+                files: [
+                    { name: "Syllabus", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Syllabus/1stMCA-Syllabus.pdf" },
+                    { name: "MCA Regulations Syllabus 2025", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Syllabus/22CMPA20D2_22CMPA14D3_MCA_%20Regulations_Syllabus%20_2025.01.pdf" },
+                ],
+            },
+            {
+                subject: "Mathematics",
+                files: [
+                    { name: "Mathematics Textbook", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Mathematics/MATHS-TEXT-BOOK.pdf" },
+                    { name: "VassXMSE1SEM1 262 Handwritten Notes", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Mathematics/VassXMSE1SEM1%262.pdf" },
+                ],
+            },
+            {
+                subject: "Data Communication and Networking",
+                files: [
+                    { name: "Unit 1 Ch1", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit1/unit2-ch1.pdf" },
+                    { name: "Unit 1 DCN Question Bank", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit1/1.%20UNIT%201%20DCN%20QUESTION%20BANK.pdf" },
+                    { name: "DCN Data Encoding", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit1/DCN-Data%20Encoding.pptx" },
+                    { name: "DCN Protocol Architecture", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit1/DCN-protocol%20architecture.pptx" },
+                    { name: "Data Communication and Networks Introduction", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit1/Data%20Communication%20and%20Networks-Introduction-final.pptx" },
+
+
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit1/App%20Layer-Unit2-Ch%202.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit2/App%20Layer-Unit2-Ch%202.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit2/unit2-ch1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit2/1.%20UNIT%202%20DCN%20QUESTION%20BANK.pdf" },
+                    { name: "U3 Transport-Layer-3rd-unit.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit3/transport-layer-3rd%20unit.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit3/unit%203-transport%20layer%20protocol-part%202.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit3/unit%203-transport%20layer-part%201.pdf" },
+                    { name: "U4 Unit4 Modified.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit4/unit%204_modified.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit4/unit%204_Networklayer.pdf" },
+                    { name: "U5 Congestion in Data Networks", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication/Unit5/Unit%205-CongestioninDataNetworks.pdf" }
+                ],
+            },
+            {
+                subject: "Data Communication and Networking Lab",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/25MCA108-DCN-lab%20manual.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/dcn-lab-ns2-wrkng-pgms.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/Assignment%201%20_Frame%20sort.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/assignment_2%20error%20detection.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/cnbubble.c" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/cninsertion.c" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/cnquicksort.c" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/cnquicksort.c" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/CRC_Program_Sep2025.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/a4prog1.c" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/Dijkstra%E2%80%99s%20Algorithm.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/Program7_Question_Dijkstra%E2%80%99s%20Algorithm.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/a8prog.c" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/Assignment%208.doc" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/program1.tcl" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/program2.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-And-Computer-Communication-Lab/CN%20assignment%203%20NS-2.pdf" },
+
+                ],
+            },
+            {
+                subject: "Research Methodology and Publication Ethics",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Research-Methodology-And-Publication-Ethics/RM_U1.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Research-Methodology-And-Publication-Ethics/RM_U2.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Research-Methodology-And-Publication-Ethics/RM_U3.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Research-Methodology-And-Publication-Ethics/RM_Unit_4.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Research-Methodology-And-Publication-Ethics/Unit4-plagiarism.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Research-Methodology-And-Publication-Ethics/Materials_Unit5.docx" },
+                ],
+            },
+            {
+                subject: "Advanced Data Base Systems",
+                files: [
+                    { name: "ADBS Textbook", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/refs/heads/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems/ADBS-Text-Book.pdf" },
+                    { name: "ADBS Unit-1", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems/ADBS_Unit%201_Intro%20to%20DB.pdf" },
+                    { name: "ADBS Unit-2", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems/ADBS_Unit%202_SQL.pdf" },
+                    { name: "ADBS Unit-3", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems/ADBS_Unit%203_MySQL.pdf" },
+                    { name: "ADBS Unit-4", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems/ADBS_Unit%204_Database%20Design.pdf" },
+                    { name: "ADBS Unit-5", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems/ADBS_Unit%205_MongoDB.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems/MongoDB-Student-Projects(A-and-B-Sections).docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems/ADBS%20Assignment(Task).docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems/View%20constraint%20details.docx" },
+                ],
+                externalfiles: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems/adbs-unit3-custom-notes-shashidharak.pdf" },
+                ],
+            },
+            {
+                subject: "Advanced Data Base Systems Lab",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems-Lab/Assignment%201.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems-Lab/Assignment%202.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems-Lab/Assignment%203.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems-Lab/Assignment%204.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems-Lab/Assignment%205.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems-Lab/Assignment%206.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems-Lab/Assignment%207_MongoDB.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems-Lab/Assignment%20Related%20to%20Lab.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Data-Base-Systems-Lab/Sample%20SEE%20Lab%20QP.docx" },
+                ]
+            },
+            {
+                subject: "Advanced Operating System with Unix",
+                files: [
+                    { name: "AOS ch1", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Operating-System-with-Unix/Aos%20ch1.pptx" },
+                    { name: "AOS Ch2", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Operating-System-with-Unix/AOS%20ch2.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Operating-System-with-Unix/AOS%20ch2.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Operating-System-with-Unix/Aos%20unit2.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Operating-System-with-Unix/Aos%20unit3.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Operating-System-with-Unix/Aos%20unit4.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Advanced-Operating-System-with-Unix/Aos%20unit5.pptx" },
+
+                ],
+            },
+            {
+                subject: "Data Structures And Algorithms",
+                files: [
+
+
+
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20I/Chapter%201/Abstract_Data_Types.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20I/Chapter%201/Arrays_in_C_Presentation.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20I/Chapter%201/C%20structure%20Program%20simple.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20I/Chapter%201/C%20structure%20Program%20using%20array%20of%20objects.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20I/Chapter%201/C%20structure%20Program%20using%20nested%20structure%20concept.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20I/Chapter%201/C_Functions_Presentation.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20I/Chapter%201/Introduction%20to%20DS-edited.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20I/Chapter%201/Introduction_to_DSA.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20I/Chapter%201/Pointers.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20I/Chapter%201/structures-edited.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20I/Chapter%202/Design%20and%20Analysis%20of%20Algorithms.pdf" },
+
+
+
+                    { name: "U2 Doubly Linked lists", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20II/Doubly%20Linked%20Lists.pdf" },
+                    { name: "Realization of DLL", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20II/Realization%20of%20DLL%20program.pdf" },
+                    { name: "Realization if Singly Linked List", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20II/Realization%20of%20Singly%20Linked%20List-edited.pdf" },
+                    { name: "Realization of SLL Program", url: "https://raw.githubusercontent.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20II/realization%20of%20SLL%20program.pdf" },
+
+                    //    Unit III Files
+
+                    { name: "U3 Evaluate Postfix.c.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/Evaluate%20Postfix.c.pdf" },
+                    { name: "U3 Interger Stack realization.docx", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/Interger%20Stack%20realization.docx" },
+                    { name: "U3 Postfix_Evaluation.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/Postfix_Evaluation.pdf" },
+                    { name: "U3 Queues as Lists in C.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/Queues%20as%20Lists%20in%20C.pdf" },
+                    { name: "U3 Recursion.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/Recursion.pdf" },
+                    { name: "U3 Recursive Program for Fibonacci numbers in C.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/Recursive%20Program%20for%20Fibonacci%20numbers%20in%20C.pdf" },
+                    { name: "U3 Stack Data Structure.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/Recursive%20Program%20for%20Fibonacci%20numbers%20in%20C.pdf" },
+                    { name: "U3 Stack.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/Stack.pdf" },
+                    { name: "U3 Static student stack.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/Static%20student%20stack.pdf" },
+                    { name: "U3 circular queue-student.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/circular%20queue-student.pdf" },
+                    { name: "U3 circular queue.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/circular%20queue.pdf" },
+                    { name: "U3 convert from infix to postfix-Algorithm.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/convert%20from%20infix%20to%20postfix-Algorithm.pdf" },
+                    { name: "U3 convert infix to postfix.c.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/convert%20infix%20to%20postfix.c.pdf" },
+                    { name: "U3 dynamic integer stack.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/dynamic%20integer%20stack.pdf" },
+                    { name: "U3 ordinary queue- student.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/ordinary%20queue-%20student.pdf" },
+                    { name: "U3 ordinary queue.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20III/ordinary%20queue.pdf" },
+
+
+                    // Unit IV
+
+                    { name: "U4 BST.c.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20IV/BST.c.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20IV/Binary%20Tree%20Representations%20new.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20IV/Implementation%20of%20Right-in%20threaded%20BT.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20IV/TREES%20-%20Introduction.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20IV/Threaded%20binary%20tree.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20IV/Traversing%20a%20tree.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20IV/binary_search_tree.c.pdf" },
+
+                    // Unit V
+
+                    { name: "U5 Efficency of Quick Sort.pdf", url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/Efficency%20of%20Quick%20Sort.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/Interpolation%20Search.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/Searching%20an%20ordered%20table.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/Searching-introduction.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/Selection%20sort.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/Sequential%20searching.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/Shell%20Sort%20Techniques.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/Simple_insertionsort.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/Sorting%20-quick%20sort%20tracing-II.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/Sorting%20-quick%20sort%20tracing.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/Sorting%20Techniques.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/binary%20search%20-%20introduction.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/mergesort.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/quickSort.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/Unit%20V/recursive%20binary%20search.pdf" },
+
+                ],
+                externalfiles: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/External/DSA-FULL-NOTES.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms/External/DSA-QB-SOLVED.pdf" },
+                ],
+            },
+            {
+                subject: "Data Structures And Algorithms Lab",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/Fundamentals%20of%20Programming%20using%20C%20Lab%20Assignment.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/DSA-ASSIGNMENT-QA.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/DSA%20Lab%20Assignment-2.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/DSA%20Lab%20Assignment-3.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/DSA%20Lab%20Assignment-4.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/DSA%20Lab%20Assignment-5.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/DSA%20Lab%20Assignment-6.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/DSA%20Lab%20Assignment-7.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/DSA-ASSIGNMENT-QA.pdf" },
+
+                ],
+                externalfiles: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/External/DSA-Assignment-2.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/External/DSA-ASSIGNMENT-3.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/External/DSA-ASSIGNMENT-4.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/External/DSA-ASSIGNMENT-5.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/External/DSA-ASSIGNMENT-6.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/External/DSA-Assignment-7.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/1st-Sem-2025-26/Data-Structures-And-Algorithms-Lab/External/part_B_programs%20DSA.pdf" },
+                ],
+            },
+
+        ],
+    },
+    {
+        semester: "2nd Sem - MCA 2025-27",
+        subjects: [
+            {
+                subject: "Syllabus",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Syllabus/2nd-Sem-Syllabus-2026.pdf" },
+                ],
+            },
+            {
+                subject: "Advanced Web Technologies Lab",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/Assignment%201.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/Assignment%202.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/Assignment%203.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/Assignment%204.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/Assignment%206.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/Assignment%207.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/Assignment%208.docx" },
+
+                ],
+                externalfiles: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/AWT-Lab-Assignment-1-Solution.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/AWT-Assignment-1Output.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/AWT-Assignment2-Solution.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/AWT-Assignment2output.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/AWT-Assignment4-Solution.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/AWT-Assignment-4-Output.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/Assignment%205%20AWT%20Lab%20Solutions.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/AWT-Asmt-5-OUTPUT.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/AWT-Assignment-6-Solution.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/AWT-Assignment-6-Output.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/AWT-Assignment-7-Solutions.pdf.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/AWT-Assignment-7-Output.pdf.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/AWT-Assignment8-Solution.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies-Lab/External/AWT-Assignment8-output.pdf" },
+                ],
+
+            },
+            {
+                subject: "Advanced Web Technologies",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies/UNIT%20I.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies/PHP%20and%20Advanced%20PHP.pptx" },
+
+                    // Unit 3
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies/UNIT%20-%203.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies/UNIT%20III.pptx" },
+
+                    // Unit 4
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies/UNIT%20-%2041.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies/UNIT%20Vi.pptx" },
+
+                    // Unit 5
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies/JQUERY%20and%20Introduction%20to%20Angular%20JS.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies/UNIT%20V%20PHP%20programs.docx" },
+
+
+
+                ],
+                externalfiles: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies/Unofficial/AWT-IMP-QA.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies/Unofficial/AWT-IMP-secB.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies/External/AWT-U3-U4-MSE2-important-qa%20(1).pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Advanced-Web-Technologies/External/AWT-IMP(FinalExam)-NMIT-2ndSem-ShashidharaK.pdf" },
+                ],
+            },
+            {
+                subject: "Data Warehousing and Data Mining",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/25MCA204_DWDM_Syllabus.pdf" },
+
+                    // Unit 1 Files
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Task%201.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit1_01_DataWarehousing-Introduction.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit1_Datawarehouse_Modelling.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/DMDW_MODULE_1_NOTES.pdf" },
+
+                    // Unit 2 files
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit2_DW_Implementation.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit2_chapter2_DM_Introduction.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit2_chapter3_Data.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit2_chapter4_Dataquality.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit2_Chapter5_DataPreprocessing.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit2_Chapter6_Similarity_Dissimilarity_Measures.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/DMDW_MODULE_2_NOTES.pdf" },
+
+                    // Unit 3 files
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/2026_DM_MODULE_3.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit3_Association_Analysis.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit3_Problems.pdf" },
+
+                    // Unit 4 files
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/DMDW_MODULE%204%20PPT.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/DMDW%20Task_2.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/1.%20UNIT%204%20DM%20Q_BANK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/DMDW_MODULE_4_NOTES.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Uint4_Classification_RuleBasedClassifiers.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit4_Classification_Bayes_Classifier%2BPerformance%20Evaluation.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit4_Classification_KNN.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit4_Classification_intro_decisiontree.pdf" },
+
+                    // Unit 5 files
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/1.%20UNIT%205%20DM%20Q_BANK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/5%20Unit.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/DMDW_MODULE_5_NOTES.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit4_NaiveBayes_Example.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit5_Cluster%20Analysis-Introduction.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unit5_Clustering_Algorithms.pdf" },
+
+                ],
+                externalfiles: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/Unofficial/DWMD-MSE1-IMP.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/External/DWMD-Imp-for-MSE2.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/External/DWDM%20Imp%20Qsns.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/External/DWDM%20Notes%20All%20in%20one.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Data-Warehousing-and-Data-Mining/External/dwdm%20notes.pdf" },
+
+                ],
+            },
+            {
+                subject: "Enterprise Java",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Format-report%5BJava%5D.pdf" },
+
+                    // Unit 1
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Unit-1%5BJava%5D.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Enterprise%20Java_Unit%201.pdf" },
+
+                    // Unit 2
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Unit-2.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Enterprise%20Java_Unit%202.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Enterprise%20Java_Unit%203_Collections.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Enterprise%20Java_Unit%203_Event%20Handling.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Enterprise%20Java_Unit%203_Multi-threaded%20Programming.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Unit%203%5B3%20Chapters%5D.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Unit%204.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/EJava%20Notes-Unit5.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Assignment%20%20Questions_Unit%205.docx" },
+
+                    // Unit 5
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Enterprise%20Java_Unit%205.pdf" },
+                ],
+                externalfiles: [
+                    // Unit 1
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/External/EJAVA-UNIT1-SHASHIDHARAK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/External/EJAVA-UNIT2-SHASHIDHARAK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/External/EJAVA-UNIT3-SHASHIDHARAK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/External/EJAVA-UNIT4-SHASHIDHARAK.pdf" },
+
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Unofficial/EJAVA-IMP-QSNs.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/Unofficial/JAVA-Viva-Questions.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java/External/EJAVA-U3-U4-MSE2-Important-qa.pdf" },
+                ],
+            },
+            {
+                subject: "Enterprise Java Lab",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/Java_lab_task.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/Format-report%5BJava%5D.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/EJava%20Project%20titles%20-%20D%20Section.xlsx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/Assignment-1_Java.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/Assignment1.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/Assignment2.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/Assignment3.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/Assignment4.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/Assignment5.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/Sample%20Lab%20Question%20Paper.docx" },
+                ],
+                externalfiles: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/External/Assignment1-EJAVA-lab.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/External/Assignment2-EJAVA-lab.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/External/EJava-Assignment3-lab-Sol.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/External/EJAVA-LAB-Assignment4-Solution.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/External/EJAVA-Assignment5-Solution.pdf.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Enterprise-Java-Lab/External/EJAVA-Assignment5-Output.pdf.pdf" },
+                ],
+            },
+            {
+                subject: "Web Development Using Ruby on Rails & PostgreSQL",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/Ruby_Rails_PostgreSQL_Installation_Guide.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/9780136702658_Sample.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/Learning%20PostgreSQL%2011%20A%20beginner's%20guide%20to%20building%20high-performance%20PostgreSQL%20database%20solutions%2C%203rd%20Edition%20-%20%20Packt%20Mapt.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/agile-web-development-with-rails-51-9781680502510-1680502514_compress.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/agile-web-development-with-rails-7-1nbsped-1680509292-9781680509298.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/mvcRail.odp" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/postgresql-up-and-running-a-practical-guide-to-the-advanced-open-source-database-3nbsped-9781491963418.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/unit%201.odp" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/Task%201_RoR.docx" },
+
+                    // Unit 3
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/Unit%203.pdf" },
+
+                    // Unit 4
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/unit%204.pdf" },
+
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/Mastering%20Ruby%20on%20Rails.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/PostgreSQL%20Basics%20and%20SQL%20Queries%20Masterclass%20(1).pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/Ruby%20on%20Rails_%20Comprehensive%20Guide%20with%20Real-world%20Examples%20(1)%20(1).pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/Ruby%20on%20Rails_%20Full%20Stack%20Mastery%20(1).pdf" },
+                ],
+                externalfiles: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/External/Ruby-MSE2-(U3-U4).pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Web-Development-Using-Ruby-on-Rails-%26-PostgreSQL/External/Ruby_Rails_Revision_Notes.pdf" },
+                ],
+            },
+            {
+                subject: "Full Stack development using Django",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/Module-1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/module1django.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/Module-1-Django.docx" },
+
+
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/module2django.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/Module-2-Django.docx" },
+
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/module-3.pptm" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/Module-3.docx" },
+
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/unit_4.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/Module-4.docx" },
+
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/Module-5.docx" },
+
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/Module-1-Django.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/MSE%20-%201%20-%20Full%20Stack.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/MSE%20-%202%20-%20Full%20Stack.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/ImportantQuestion.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/25MCA211%20-%20Full%20Stack%20Development%20using%20DJango%20-%20Model%20QP.pdf" },
+
+
+                ],
+                externalfiles: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/External/Django-U3-U4-IMP-MSE2.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/External/Django-Unit1-Imp-ShashidharaK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/External/Django-Unit2-Imp-ShashidharaK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/External/Django-Unit3-Imp-ShashidharaK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/External/Django-Unit4-Imp-ShashidharaK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Full-Stack-development-using-Django/External/Django-Unit5-Imp-ShashidharaK.pdf" },
+                ],
+            },
+            {
+                subject: "Software Engineering and Testing",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/Sommerville%20-Software-Engineering%20-10th%20edition.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/Software%20Engineering%20Unit%201%20Chapter%201_compressed.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/Unit%201%20Chapter%202-compressed.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/Unit%202_20260525_223748_0000.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/System%20Models_compressed.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/Software%20requirements-unit2.ppt" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/agile-unit2.ppt" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/UNIT-3%20Class%20Slides.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/UNIT-3-updated.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/Static-vs-Dynamic-Testing_part3.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/Performance%2C%20Security%20%26%20Scalability%20Testing%20(2)_compressed.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/Unit4%20SOFTWARE%20TESTING%20FUNDAMENTALS.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/UNIT4-Selenium%20JUNIT%20TestNG%20Cypress.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/MAVEN%20AUTOMATION%20TOOL_20260525_223654_0000.pdf" },
+                ],
+                externalfiles: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/Unofficial/SET-IMP-MSE1-U1U2.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/Unofficial/SET-short%20Notes%20MSE1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/tree/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/External" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Software-Engineering-and-Testing/External/SET-IMP-FinalExam-2026.pdf" },
+                ],
+
+            },
+            {
+                subject: "Applied Data Science and Analytics",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Applied-Data-Science-and-Analytics/Introducing%20Data%20Science%20-%20Big%20Data%2C%20Machine%20Learning%20and%20more%2C%20using%20Python%20tools%20(2020)-1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Applied-Data-Science-and-Analytics/Copy%20of%20ADSA_Unit1.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Applied-Data-Science-and-Analytics/Unit%202.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Applied-Data-Science-and-Analytics/Unit%203.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Applied-Data-Science-and-Analytics/Module4_ADSA.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Applied-Data-Science-and-Analytics/Module5_ADSA.pptx" },
+
+                ],
+            },
+            {
+                subject: "Digital Image Processing and Pattern Recognition",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Digital-Image-Processing-and-Pattern-Recognition/Assignment%201%20-%20DIPPR%20Unit%20I%20%20%20II%20_92ffd701812d4296c11bb46109cc62cc.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Digital-Image-Processing-and-Pattern-Recognition/Assignment%202%20-%20DIP%20%20PR_149e4a2ff1c54f8ec992717b4e83aead.pdf" },
+                ],
+            },
+            {
+                subject: "Professional Communication Skills",
+                files: [],
+                externalfiles: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Professional-Communication-Skills/Unofficial/PCS-MSE1-PTC.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Professional-Communication-Skills/External/PCS-MSE2-Important-questionAnswers.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/2nd-Sem-2025-26/Professional-Communication-Skills/External/PCS-Sem-prep.pdf" },
+                ],
+            },
+        ],
+    },
+    {
+        semester: "3rd Sem - MCA 2025-27",
+        subjects: [
+        ],
+    },
+    {
+        semester: "3rd Sem - MCA 2024-26",
+        subjects: [
+            {
+                subject: "Syllabus",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Syllabus/2024-2026%20Batch%20-%20III%20Semester%20MCA%20Syllabus%20with%20Regulations.pdf" },
+                ],
+            },
+            {
+                subject: "Advanced web technologies lab",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Advanced-web-technologies-lab/ASSIGNMENT%201%20(3).docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Advanced-web-technologies-lab/Assignment2%20(1).docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Advanced-web-technologies-lab/Assignment%203..docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Advanced-web-technologies-lab/Assignment%205..docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Advanced-web-technologies-lab/Assignment%20html5.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Advanced-web-technologies-lab/ASSIGNMENT6..docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Advanced-web-technologies-lab/Assignment7.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Advanced-web-technologies-lab/Assignment%208.docx" },
+
+                ],
+            },
+            {
+                subject: "Advanced web technologies",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Advanced-web-technologies/UNIT%20I.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Advanced-web-technologies/JavaScript%20Introduction.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Advanced-web-technologies/Task%201_AWT..docx" },
+                ],
+            },
+            {
+                subject: "Artificial-Intelligence-and-Machine-Learning",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Artificial-Intelligence-and-Machine-Learning/ASSIGNMENT-1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Artificial-Intelligence-and-Machine-Learning/ASSIGNMENT.odt" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Artificial-Intelligence-and-Machine-Learning/ASSIGNMENT-4.odt" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Artificial-Intelligence-and-Machine-Learning/Assignment-4.odt" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Artificial-Intelligence-and-Machine-Learning/Assignment5.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Artificial-Intelligence-and-Machine-Learning/Assignment-6.odt" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Artificial-Intelligence-and-Machine-Learning/ASSIGNMENT-7(pca%2Csvm%2Cnb).odt" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Artificial-Intelligence-and-Machine-Learning/Customers.csv" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Artificial-Intelligence-and-Machine-Learning/Data1.csv" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Artificial-Intelligence-and-Machine-Learning/Unit-1-AI%20%20ML-2025.odp" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Artificial-Intelligence-and-Machine-Learning/heart.data.csv" },
+                ],
+            },
+            {
+                subject: "Block-Chain-Technology",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Block-Chain-Technology/BCT%20Syllabus.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Block-Chain-Technology/Blockchain%20Unit-1_PPT_2.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Block-Chain-Technology/block%20chain_unit-1_ppt_1.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Block-Chain-Technology/block%20chain_unit-2.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Block-Chain-Technology/Block%20chain_Unit-3%20(3).pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Block-Chain-Technology/Block%20chain%20Unit-4.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Block-chain-technology/block%20chain_unit-1_ppt_new%20(1).pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Block-chain-technology/block%20chain_unit-2%20(2).pptx" },
+
+                ],
+            },
+            {
+                subject: "Cloud-computing-and-big-data",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Cloud-computing-and-big-data/Unit%201%20ppt.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Cloud-computing-and-big-data/unit%201%20-%20Big%20Data%20Modified.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Cloud-computing-and-big-data/unit%202.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Cloud-computing-and-big-data/unit%203.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Cloud-computing-and-big-data/unit%204.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Cloud-computing-and-big-data/Cloud%20Computing%20and%20Big%20Data%20Task.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Cloud-computing-and-big-data/bigdata%20assignment%202.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Cloud-computing-and-big-data/BDA4.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Cloud-computing-and-big-data/BDA5.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Cloud-computing-and-big-data/BDA6.pdf" },
+
+                ],
+            },
+            {
+                subject: "Mobile-computing-and-application-development",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Mobile-computing-and-application-development/MC%20%20AD%20assignment%202.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/MCA-NMAMIT/3rd-sem-2025-26/Mobile-computing-and-application-development/MC%20%20AD%20task.pdf" },
+                ],
+            },
+        ],
+    },
+    {
+        semester: "2nd Sem-BCA [SEP] [Mangalore University] 2024-2027",
+        subjects: [
+            {
+                subject: "Data Structures",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/2nd-Semester/Data-Structures/datastructure-unit1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/2nd-Semester/Data-Structures/datastructure-unit1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/2nd-Semester/Data-Structures/dsUNIT%202.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/2nd-Semester/Data-Structures/dsunit4.pdf" },
+                ],
+
+            },
+            {
+                subject: "Object Oriented Programming with Java",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/2nd-Semester/Object-Oriented-Programming-with-JAVA/Java%20Unit%201%20%26%202%20notes.pdf" },
+                ],
+            }
+        ]
+    },
+    {
+        semester: "3rd Sem-BCA [SEP] [Mangalore University] 2024-2027",
+        subjects: [
+            {
+                subject: "C# & .NET Framework",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/UNIT%20I.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/C%23%20%26%20Dot%20Net%20%20Unit%20I%20Class%20Notes.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/UNIT%20II.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/unit%202.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/UNIT%20III.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/C%23%20QP%20Solved%20Unit-3%20%26%204%20Pleaseopen.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/UNIT%20IV.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/Unit_IV_ADO_NET_Full_Answers.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/BCA_III_Sem_Strings.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/C%23%20STEPS%20Final.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/C%23-Notes-a.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/c%23-Notes-a.pdf" },
+                ],
+                externalfiles: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/External/BCACAC%20313.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/C%23-%26-.NET-Framework/External/NEP%20BCA%20III%20Sem%20C%20%23%20and%20DOT%20NET%20Framework.pdf" },
+                ]
+            },
+            {
+                subject: "Computer Networks",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/Computer-Networks/BCA_III_Sem_Computer_Networks_Unit-I_Full_Answers.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/Computer-Networks/CCN%201st%20Unit.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/Computer-Networks/Computer%20Networks%20-Question%20Bank%20by%20MUCSTA.pdf" },
+                ],
+            },
+            {
+                subject: "Database Management System",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/Database-Management-System/DBMS%20-%20I%20UNIT.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/Database-Management-System/Unit%20I%20ER-Model.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/Database-Management-System/DBMS%20UNIT%201.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/Database-Management-System/DBMS%20UNIT%202.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/Database-Management-System/UNIT%203%20DBMS.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/Database-Management-System/DBMS%20Unit%204.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/Database-Management-System/module-2%20functional%20dependencies.pdf" },
+                ],
+            },
+            {
+                subject: "Open Source Tools",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/3rd-Semester/Open-Source-Tools/OST%20-SEP%20by%20MUCSTA.pdf" },
+                ]
+            },
+        ]
+    },
+    {
+        semester: "4th Sem-BCA [SEP] [Mangalore University] 2024-2027",
+        subjects: [
+            {
+                subject: "Advanced JAVA and J2EE",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Advanced-JAVA-and-J2EE/AJAVA%20-%20I%20UNIT.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Advanced-JAVA-and-J2EE/AJAVA%20-%20II%20UNIT.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Advanced-JAVA-and-J2EE/AJAVA%20-%20III%20UNIT.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Advanced-JAVA-and-J2EE/AJAVA%20-%20IV%20UNIT.pdf" },
+                ],
+            },
+            {
+                subject: "Digital-Image-Processing",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Digital-Image-Processing/DIP-1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Digital-Image-Processing/Digital%20Image%20Processing%20Unit%201%20Study%20Material.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Digital-Image-Processing/Digital_Image%20Proessing%20Unit%202%20Study%20Material%202026.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Digital-Image-Processing/UNIT%203%20Digital%20Image%20Processing%20Study%20Material.pdf" },
+                ],
+            },
+            {
+                subject: "Operating System",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Operating-System/OS%20unit%201%205m.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Operating-System/OS%20UNIT-1%202m.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Operating-System/OS%20L1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Operating-System/unit%202%205m.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Operating-System/OS%20L2.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Operating-System/unit%203%205m.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Operating-System/OS%20L3.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Operating-System/unit%204%205m.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Operating-System/OS%20IV%20sem%202M.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Operating-System/2%20MARK'S.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Operating-System/OS%202m%20234%20unit.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Operating-System/OS%20NEP%20%20June%20-2025.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Operating-System/Operating%20System.pdf" },
+                ],
+            },
+            {
+                subject: "Python Programming",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Python-Programming/PYTHON_QB_Completed.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Python-Programming/python1-1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Python-Programming/python%20inheritence%20PPT.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Python-Programming/python%20GUI%20PPT.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Python-Programming/UNIT-4%20python%20SQLITe-1.pptx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Python-Programming/Unit4_python.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Python-Programming/unit4%20python%20complete%20notes.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-SEP/4th-Semester/Python-Programming/python%20record%20SEP%20divya.pdf" },
+                ]
+            }
+        ]
+    },
+    {
+        semester: "6th Sem-BCA [NEP] [Mangalore University] 2022-2025",
+        subjects: [
+            {
+                subject: "Syllabus",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Syllabus/J2EE%20QBANK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Syllabus/VI%20BCA-ADVANCED%20VAVA%20AND%20J2EE%20QBANK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Syllabus/VI%20SEM%20BCA%20QBANK_WCMS_FDS%20(1).pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Syllabus/VI%20SEM%20BCA%20QBANK_WCMS_FDS.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Syllabus/VISEMBCA-PHPANDMYSQLQBANK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Syllabus/data%20science.pdf" },
+                ],
+
+            },
+            {
+                subject: "Advanced Java and J2EE",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Syllabus/J2EE%20QBANK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Advanced-Java-and-J2EE/Advance%20Java%20QB%20unit-1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Advanced-Java-and-J2EE/Advance%20java%20QB%20Unit-2.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Advanced-Java-and-J2EE/Advance%20Java%20Unit-3.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Advanced-Java-and-J2EE/java%20unit%204.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Advanced-Java-and-J2EE/unit%203%20chatgpt%20methods.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Advanced-Java-and-J2EE/Unit%203%20Deepseek%20Methds.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Advanced-Java-and-J2EE/J2EE%20Unit-4%20Chatgpt%204%20marks.pdf" },
+                ],
+
+            },
+            {
+                subject: "Artificial Intelligence",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Artificial-Intelligence/Unit_1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Artificial-Intelligence/Unit_2.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Artificial-Intelligence/Unit_3-1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Artificial-Intelligence/AIUNIT4.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Artificial-Intelligence/All_imp_Ai.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Artificial-Intelligence/AI%20Chatgpt%20UNIT%202.pdf" },
+                ],
+
+            },
+            {
+                subject: "Fundamentals of Data Science",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Syllabus/VI%20SEM%20BCA%20QBANK_WCMS_FDS.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Fundamentals-of-Data-Science/FDS_QB_SOLVED.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Fundamentals-of-Data-Science/FDS_QB_SOLVED.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Fundamentals-of-Data-Science/DocScanner%2014%20Jun%202025%206-05%20am.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Fundamentals-of-Data-Science/DocScanner%2014%20Jun%202025%207-52%20am.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Fundamentals-of-Data-Science/Unit-1%20Chatgpt.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Fundamentals-of-Data-Science/Unit-2%20DS%20%202%20marks%20%5BChatgpt%5D.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Fundamentals-of-Data-Science/Unit%203%20DS%202%20marks%20%5BChatgpt%5D.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Fundamentals-of-Data-Science/Unit-3%20and%204%20QP%20Answ%202024.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Fundamentals-of-Data-Science/Question%20paper%20answer%202024%20unit-1%20and%20unit-2.pdf" },
+                ],
+
+            },
+            {
+                subject: "PHP and MYSQL",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Syllabus/VISEMBCA-PHPANDMYSQLQBANK.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/PHP-and-MYSQL/PHP%20UNIT%201%20SOLVED%5B1%5D.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/PHP-and-MYSQL/PHP%20UNIT-2%20(2%20Marks)%20%5BChatGpt%5D.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/PHP-and-MYSQL/UNIT%203%20PHP%20(2%20marks)%20%5BChatGpt%5D.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/PHP-and-MYSQL/unit%204%20php%20GPT.pdf" },
+                ],
+
+            },
+            {
+                subject: "Web Content Management System",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Syllabus/VI%20SEM%20BCA%20QBANK_WCMS_FDS.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Web-Content-Management-System/WCMS%20UNIT-1.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Web-Content-Management-System/WCMS%20UNIT-2.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Web-Content-Management-System/WCMS%20UNIT-3.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Web-Content-Management-System/WCMS%20UNIT-4.pdf" },
+                ],
+
+            },
+            {
+                subject: "Previous Year Question Papers",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Previous-Year-QP/6th%20Semester%20B.C.A.%20May%202024.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Previous-Year-QP/Document%20from%20Shashi_kulal.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Previous-Year-QP/NEP%20BCA%20VI%20Sem%20Fundamentals%20of%20Data%20Science.pdf" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/BCA-MANGALORE-U-NEP/6th-Semester/Previous-Year-QP/NEP%20BCA%20VI%20Sem%20Web%20Content%20Management%20System.pdf" },
+                ]
+            },
+        ],
+    },
+    {
+        semester: "Other Resources",
+        subjects: [
+            {
+                subject: "Advanced Operating System with Unix",
+                files: [
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/OTHER_RESOURCES/Operating_System/OPERATING-SYSTEM.docx" },
+                    { url: "https://raw.github.com/Shashidharak89/Study_Materials_Collection/main/OTHER_RESOURCES/Operating_System/OPERATING-SYSTEM.pdf" },
+                ],
+
+            },
+        ],
+    },
+];
+
+export default materialsData;
