@@ -5,6 +5,8 @@ import resourceRoutes from "./modules/resources/resource.routes.js";
 import userRoutes from "./modules/user/user.routes.js";
 import smRoutes from "./modules/study-materials/study-materials.routes.js";
 import legacyStudyMaterialsRoutes from "./modules/study-materials/legacy/legacy-materials.routes.js";
+import qpRoutes from "./modules/question-papers/question-papers.routes.js";
+import { downloadPdf } from "./modules/question-papers/pdf/pdf.controller.js";
 import { errorHandler } from "./common/middleware/errorHandler.js";
 import { ApiError } from "./common/utils/apiError.js";
 
@@ -47,6 +49,12 @@ app.use("/api/resources", resourceRoutes);
 // Study Materials routes: /api/study-materials, /api/sm/tree, /api/sm/v1/*
 app.use("/api/study-materials", legacyStudyMaterialsRoutes);
 app.use("/api/sm", smRoutes);
+
+// Question Papers routes: /api/qp/v1/*, /api/qp/download-pdf
+app.use("/api/qp", qpRoutes);
+
+// Shared PDF generation endpoint for QP and Works
+app.post("/api/work/download-pdf", downloadPdf);
 
 // User & Auth routes: /api/user/me, /api/auth/me, /api/me
 app.use("/api/user", userRoutes);

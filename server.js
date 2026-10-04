@@ -25,6 +25,7 @@ async function startServer() {
       console.log(`👉 Upload Updates (WebSocket): ws://localhost:${PORT}/ws/updates/upload`);
       console.log(`👉 Resources API: http://localhost:${PORT}/api/resources/getresources`);
       console.log(`👉 Study Materials API: http://localhost:${PORT}/api/sm/v1/universities`);
+      console.log(`👉 Question Papers API: http://localhost:${PORT}/api/qp/v1/subjects`);
     });
 
     // Graceful Shutdown
