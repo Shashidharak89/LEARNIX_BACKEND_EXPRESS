@@ -38,3 +38,25 @@ export const getResourceById = asyncHandler(async (req, res) => {
     data: resource,
   });
 });
+
+/**
+ * Controller to get recent modified subject names with pagination.
+ * GET /api/resources/recentsubjects?page=1&size=10
+ */
+export const getRecentSubjects = asyncHandler(async (req, res) => {
+  const { page, size, limit } = req.query;
+
+  const result = await ResourceService.getRecentSubjects({
+    page,
+    size: size || limit,
+  });
+
+  return ApiResponse.success(res, {
+    statusCode: 200,
+    message: "Recent subjects fetched successfully",
+    data: result.subjects,
+    subjectNames: result.subjectNames,
+    pagination: result.pagination,
+  });
+});
+

@@ -214,4 +214,80 @@ export class ResourceService {
       },
     };
   }
+
+  /**
+   * Fetch latest modified/created subject names with pagination (default 10 per page).
+   */
+  static async getRecentSubjects({ page = 1, size = 10 }) {
+    const pageNum = Math.max(1, parseInt(page, 10) || 1);
+    const limit = Math.min(100, Math.max(1, parseInt(size, 10) || 10));
+    const skip = (pageNum - 1) * limit;
+
+    const visibilityCondition = {
+      $or: [
+        { visibility: "public" },
+        { visibility: { $exists: false } },
+      ],
+    };
+
+    const [totalSubjects, subjectDocs] = await Promise.all([
+      Subject.countDocuments(visibilityCondition),
+      Subject.find(visibilityCondition)
+        .sort({ updatedAt: -1, createdAt: -1, _id: -1 })
+        .skip(skip)
+        .limit(limit)
+        .lean(),
+    ]);
+
+    let subjects = subjectDocs.map((s) => ({
+      _id: s._id.toString(),
+      subject: s.subject,
+      createdAt: s.createdAt,
+      updatedAt: s.updatedAt || s.createdAt,
+    }));
+
+    let total = totalSubjects;
+
+    // Fallback: If Subject collection returned 0 results, retrieve latest subjects referenced in Topics
+    if (subjects.length === 0) {
+      const recentTopics = await Topic.find(visibilityCondition, { subjectId: 1, topic: 1 })
+        .sort({ timestamp: -1, _id: -1 })
+        .skip(skip)
+        .limit(limit * 2)
+        .lean();
+
+      const topicSubjectIds = recentTopics.map((t) => t.subjectId).filter(Boolean);
+      if (topicSubjectIds.length > 0) {
+        const fallbackSubjects = await Subject.find(
+          { _id: { $in: topicSubjectIds } },
+          { subject: 1, createdAt: 1, updatedAt: 1 }
+        ).lean();
+
+        subjects = fallbackSubjects.map((s) => ({
+          _id: s._id.toString(),
+          subject: s.subject,
+          createdAt: s.createdAt,
+          updatedAt: s.updatedAt || s.createdAt,
+        }));
+        total = subjects.length;
+      }
+    }
+
+    const subjectNames = Array.from(
+      new Set(subjects.map((s) => s.subject).filter((s) => Boolean(s) && typeof s === "string" && s.trim().length > 0))
+    );
+
+    return {
+      subjects,
+      subjectNames,
+      pagination: {
+        total,
+        page: pageNum,
+        size: limit,
+        totalPages: Math.max(1, Math.ceil(total / limit)),
+        hasMore: pageNum * limit < total,
+      },
+    };
+  }
 }
+
