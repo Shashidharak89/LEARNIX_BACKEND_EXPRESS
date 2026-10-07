@@ -37,10 +37,19 @@ export class QPImagesService {
 
     const [records, total] = await Promise.all([
       QPImages.find(query)
-        .populate("subject")
+        .populate({
+          path: "subject",
+          populate: [
+            { path: "course" },
+            { path: "semester" }
+          ]
+        })
         .populate("batch")
         .populate("examtype")
-        .populate("college")
+        .populate({
+          path: "college",
+          populate: { path: "university" }
+        })
         .sort({ createdAt: -1 })
         .skip(skip)
         .limit(l)
