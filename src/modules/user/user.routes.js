@@ -10,9 +10,11 @@ import { authenticate } from "../../common/middleware/authenticate.js";
 const router = Router();
 
 // User verification endpoints
-// GET /api/user/verify, POST /api/user/verify
+// GET /api/user/verify, POST /api/user/verify, GET /api/auth/verify-token, etc.
 router.get("/verify", verifyUser);
 router.post("/verify", verifyUser);
+router.get("/verify-token", verifyUser);
+router.post("/verify-token", verifyUser);
 
 // Current user profile endpoints
 // GET /api/user/me, POST /api/user/me

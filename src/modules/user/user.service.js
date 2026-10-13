@@ -1,5 +1,6 @@
 import { getUserFromToken } from "../../common/utils/auth.helper.js";
 import { ApiError } from "../../common/utils/apiError.js";
+import User from "../../models/user/User.js";
 
 export class UserService {
   /**
@@ -22,6 +23,7 @@ export class UserService {
 
   /**
    * Verifies JWT token and returns user payload & user document.
+   * Also updates user's last login timestamp.
    * @param {string} token
    */
   static async verifyUserToken(token) {
@@ -33,6 +35,20 @@ export class UserService {
 
     if (error || !user) {
       throw new ApiError(statusCode || 401, error || "Invalid or expired token");
+    }
+
+    const now = new Date();
+    try {
+      if (user._id) {
+        await User.findByIdAndUpdate(user._id, {
+          $set: {
+            lastLoginAt: now,
+          },
+        });
+        user.lastLoginAt = now;
+      }
+    } catch (updateErr) {
+      console.warn("Failed to update last login time in verifyUserToken:", updateErr?.message || updateErr);
     }
 
     return {

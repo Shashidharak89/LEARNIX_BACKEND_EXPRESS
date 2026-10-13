@@ -36,6 +36,9 @@ export const verifyUser = asyncHandler(async (req, res) => {
     statusCode: 200,
     message: "User verified successfully",
     data: result,
+    extra: {
+      user: result.user,
+    },
   });
 });
 
